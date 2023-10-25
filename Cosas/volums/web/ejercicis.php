@@ -67,7 +67,7 @@
         echo "$num1 es mayor que $num2 <br>";
     } else {
         echo "$num2 es mayor que $num1 <br>";
-    };
+    }
     echo "<br>";
     echo "Numeros: $num3 y $num4 <br>"; 
     
@@ -75,7 +75,7 @@
         echo "$num3 es menor que $num4";
     } else {
         echo "$num4 es menor $num3";
-    }; 
+    }
 ?>
 
 <!--6. Calcula el preu total a pagar d’unes entrades de cinema en funció del nombre d’entrades. 
@@ -100,7 +100,7 @@ preu de l’entrada és de 3 euros.</h2>
     } else {
         $precio = $numeroEntradas * 3;
         echo "Tienes $numeroEntradas a 3 € que son: $precio €";
-    };
+    }
 
 ?>
 
@@ -115,7 +115,7 @@ preu de l’entrada és de 3 euros.</h2>
         echo "La persona es adulta";
     } else {
         echo "La persona es menor";
-    };
+    }
 ?>
 
 <!--8. Ha d’endevinar el nombre entre 1 i 100 que l’usuari ha introduït. Pensa alguna forma de fer-lo més òptim que no sigui la de recórrer 
@@ -125,12 +125,55 @@ tots els nombres de l’1 al 100. -->
 tots els nombres de l’1 al 100.</h2>
 
 <?php
-    $numIntroducido = 3;
-    $numAdivinar = 45;
+$nombre_introduit = 89;
+$encontrado = false;
+$intentos = 0;
+$min = 1;
+$max = 100;
 
+while (!$encontrado && $min <= $max) {
+    $intentos++;
+    $advinar = floor(($min + $max) / 2);
+    echo "Es el numero $advinar? (Intentos de la maquina: $intentos)<br>";
+
+    if ($advinar == $nombre_introduit) {
+        $encontrado = true;
+        echo "Oleee lo he adivinado, es el número $advinar!";
+    } elseif ($advinar < $nombre_introduit) {
+        $min = $advinar + 1;
+    } else {
+        $max = $advinar - 1;
+    }
+}
+
+if (!$encontrado) {
+    echo "El numero que me has dado no se encuentra entre el 1 y 100.";
+}
+?>
+
+<!--9. Imprimir els nombres sencers entre 100 i 1.  -->
+
+<h2>9. Imprimir els nombres sencers entre 100 i 1.</h2>
+
+<?php
+for ($i = 100; $i >= 1; $i--) {
+    echo $i . "-";
+}
 
 ?>
 
+<!--10. Imprimir els nombres imparells entre 1 i 20. Treu la informació dins d’una taula -->
+
+<h2>10. Imprimir els nombres imparells entre 1 i 20. Treu la informació dins d’una taula</h2>
+
+<?php 
+for ($i = 1; $i <= 20; $i++) {
+    if ($i % 2 != 0) {
+        echo "<tr><td>$i</td></tr>";
+    }
+}
+
+?>
 
 </body>
 </html>
