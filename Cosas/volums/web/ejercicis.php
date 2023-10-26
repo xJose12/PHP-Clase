@@ -197,18 +197,18 @@
     <!--12. Imprimir la taula de multiplicar d’un nombre. Treu la informació dins d’una taula.  -->
 
     <h2>12. Imprimir la taula de multiplicar d’un nombre. Treu la informació dins d’una taula.</h2>
-
-    <?php
-    $tablaDel = 4;
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>Tabla del " . $tablaDel . "</th>";
-    for ($i = 0; $i <= 10; $i++) {
-        $multiplicar = $tablaDel * $i;
-        echo "<tr><td>$tablaDel * $i = </td><td>$multiplicar</td></tr>";
-    }
-    echo "</table>";
-    ?>
+        <?php
+        echo "<table border=1px bordercolor=black with=50px height=50px>";
+        $tablaDel = 4;
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Tabla del " . $tablaDel . "</th>";
+        for ($i = 0; $i <= 10; $i++) {
+            $multiplicar = $tablaDel * $i;
+            echo "<tr><td>$tablaDel * $i = </td><td>$multiplicar</td></tr>";
+        }
+        echo "</table>";
+        ?>
 
 
     <!--13. Imprimir la taula de multiplicar de tots els nombres de l’1 al 10. Treu una taula per a cada taula de multiplicar. -->
