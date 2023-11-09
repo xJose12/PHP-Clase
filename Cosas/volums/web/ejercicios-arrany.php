@@ -169,33 +169,32 @@ print_r($primeraArray);
 <h2>13. Practica amb array_diff, array_intersect, array_merge, array_unique.</h2>
 
 <?php
-$arrayDif1 = array(1, 2, 3, 4, 5);
-$arrayDif2 = array(3, 4, 5, 6, 7);
+$arrayDif1 = array("Ana", "Carlos", "David", "Elena", "Francisco");
+$arrayDif2 = array("David", "Elena", "Francisco", "Gabriel", "Hilda");
 
 $diferencia = array_diff($arrayDif1, $arrayDif2);
 print_r($diferencia); // Muestra los elementos que están en $array1 pero no en $array2.
 
 echo "<br>";
 
-$arrayInter1 = array(1, 2, 3, 4, 5);
-$arrayInter2 = array(3, 4, 5, 6, 7);
+$arrayInter1 = array("Ana", "Carlos", "David", "Elena", "Francisco");
+$arrayInter2 = array("David", "Elena", "Francisco", "Gabriel", "Hilda");
 
 $interseccion = array_intersect($arrayInter1, $arrayInter2);
 print_r($interseccion); // Muestra los elementos que están en ambos $array1 y $array2.
 
 echo "<br>";
 
-$arrayMerge1 = array(1, 2, 3);
-$arrayMerge2 = array(4, 5, 6);
+$arrayMerge1 = array("Ana", "Carlos", "David");
+$arrayMerge2 = array("Elena", "Francisco", "Gabriel");
 
 $combinado = array_merge($arrayMerge1, $arrayMerge2);
 print_r($combinado); // Muestra un único array con todos los elementos de $array1 seguidos por los de $array2.
 
 echo "<br>";
 
-$array = array(1, 2, 2, 3, 4, 4, 5);
+$array = array("Ana", "Carlos", "Carlos", "David", "Elena", "Elena", "Francisco");
 
 $unicos = array_unique($array);
 print_r($unicos); // Muestra un array con elementos únicos, eliminando duplicados.
-
 ?>
