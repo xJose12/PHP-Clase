@@ -124,11 +124,11 @@ $numerosNegativos = 0;
 
 for ($i = 0; $i < count($primeraArray); $i++) {
     if ($primeraArray[$i] == 0) {
-        $numeroCeros += 1;
+        $numerosCeros++;
     } elseif ($primeraArray[$i] < 0 ) {
-        $numerosNegativos += 1;
+        $numerosNegativos++;
     } else {
-        $numerosPositivos += 1;
+        $numerosPositivos++;
     }
 } 
 
@@ -150,7 +150,6 @@ print_r($primeraArray);
 
 ?>
 
-
 <!-- 12. Elimina aquests 2 anteriors elements. -->
 
 <h2>12. Elimina aquests 2 anteriors elements.</h2>
@@ -169,32 +168,32 @@ print_r($primeraArray);
 <h2>13. Practica amb array_diff, array_intersect, array_merge, array_unique.</h2>
 
 <?php
-$arrayDif1 = array("Ana", "Carlos", "David", "Elena", "Francisco");
-$arrayDif2 = array("David", "Elena", "Francisco", "Gabriel", "Hilda");
+$IFC31A = array("Ana", "Carlos", "David", "Elena", "Francisco");
+$IFC31B = array("David", "Elena", "Francisco", "Gabriel", "Hilda");
 
-$diferencia = array_diff($arrayDif1, $arrayDif2);
-print_r($diferencia); // Muestra los elementos que están en $array1 pero no en $array2.
-
-echo "<br>";
-
-$arrayInter1 = array("Ana", "Carlos", "David", "Elena", "Francisco");
-$arrayInter2 = array("David", "Elena", "Francisco", "Gabriel", "Hilda");
-
-$interseccion = array_intersect($arrayInter1, $arrayInter2);
-print_r($interseccion); // Muestra los elementos que están en ambos $array1 y $array2.
+$diferencia = array_diff($IFC31A, $IFC31B);
+print_r($diferencia); // Muestra los elementos que están en $IFC31A pero no en $IFC31B.
 
 echo "<br>";
 
-$arrayMerge1 = array("Ana", "Carlos", "David");
-$arrayMerge2 = array("Elena", "Francisco", "Gabriel");
+$IFC31A = array("Ana", "Carlos", "David", "Elena", "Francisco");
+$IFC31B = array("David", "Elena", "Francisco", "Gabriel", "Hilda");
 
-$combinado = array_merge($arrayMerge1, $arrayMerge2);
-print_r($combinado); // Muestra un único array con todos los elementos de $array1 seguidos por los de $array2.
+$interseccion = array_intersect($IFC31A, $IFC31B);
+print_r($interseccion); // Muestra los elementos que están en ambos $IFC31A y $IFC31B.
 
 echo "<br>";
 
-$array = array("Ana", "Carlos", "Carlos", "David", "Elena", "Elena", "Francisco");
+$IFC31A = array("Ana", "Carlos", "David");
+$IFC31B = array("Elena", "Francisco", "Gabriel");
 
-$unicos = array_unique($array);
+$combinado = array_merge($IFC31A, $IFC31B);
+print_r($combinado); // Muestra un único array con todos los elementos de $IFC31A seguidos por los de $IFC31B.
+
+echo "<br>";
+
+$IFC31A = array("Ana", "Carlos", "Carlos", "David", "Elena", "Elena", "Francisco");
+
+$unicos = array_unique($IFC31A);
 print_r($unicos); // Muestra un array con elementos únicos, eliminando duplicados.
 ?>
