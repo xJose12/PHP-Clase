@@ -71,8 +71,6 @@ sort($primeraArray);
 echo implode(", ", $primeraArray) . "<br>";
 rsort($primeraArray);
 echo implode(", ", $primeraArray);
-
-
 ?>
 <!-- 7. Mostrar la informació de l’array ordenada de l’exercici anterior dins d’una taula HTML. -->
 
