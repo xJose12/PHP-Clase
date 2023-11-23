@@ -6,6 +6,7 @@
 <body>
     <?php
     function referencias_menu() {
+        echo '<a href="proyecto.php"> Pagina principal</a><br>';
         echo '<a href="funcion1.php"> Funcion 1</a><br>';
         echo '<a href="funcion2.php"> Funcion 2</a><br>';
         echo '<a href="funcion3.php"> Funcion 3</a><br>';
