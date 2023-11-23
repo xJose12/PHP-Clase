@@ -5,7 +5,7 @@
 </head>
 <body>
     <?php
-    function referencias_menu()
+    function referencias_menu() {
         echo "<a href="funcion1.php"> Funcion 1</a>";
         echo "<a href="funcion2.php"> Funcion 2</a>";
         echo "<a href="funcion3.php"> Funcion 3</a>";
@@ -16,6 +16,7 @@
         echo "<a href="funcion8.php"> Funcion 8</a>";
         echo "<a href="funcion9.php"> Funcion 9</a>";
         echo "<a href="funcion10.php"> Funcion 10</a>";
+    }
     ?>
 </body>
 </html>
