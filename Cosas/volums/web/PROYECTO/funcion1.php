@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Funcion 1</title>
 </head>
 <body>
     <?php
+<<<<<<< HEAD
     include 'proyecto.php';
     cargarVideojuegos();
+=======
+>>>>>>> 4ae690ff7ae70d96eb7f0c35ccf0fdaae35ca974
     ?>
 </body>
 </html>
