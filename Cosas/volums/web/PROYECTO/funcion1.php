@@ -12,22 +12,27 @@
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
 
-    //Convertimos en tabla los datos del array
-    echo "<table border = 1px>";
-    echo "<tr>";
-    foreach ($videojuegos[0] as $titulos => $valor) {
-        echo "<th>$titulos</th>";
-    }
-    echo "</tr>";
-
-    foreach ($videojuegos as $datos) {
+    //Hacemos la función para imprimir la tabla
+    function imprimirTabla(&$videojuegos) {
+        //Convertimos en tabla los datos del array
+        echo "<table border = 1px>";
         echo "<tr>";
-        foreach ($datos as $valor) {
-            echo "<td>$valor</td>";
+        foreach ($videojuegos[0] as $titulos => $valor) {
+            echo "<th>$titulos</th>";
         }
         echo "</tr>";
+
+        foreach ($videojuegos as $datos) {
+            echo "<tr>";
+            foreach ($datos as $valor) {
+                echo "<td>$valor</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
     }
-    echo "</table>";
+
+    imprimirTabla($videojuegos);
 
     ?>
 </body>
