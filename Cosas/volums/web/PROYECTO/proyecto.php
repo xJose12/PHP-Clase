@@ -17,8 +17,20 @@
         echo '<a href="funcion9.php"> Funcion 9</a><br>';
         echo '<a href="funcion10.php"> Funcion 10</a><br>';
     }
-
     referencias_menu();
-    ?>
+
+    function cargarVideojuegos( $archivoJuegos, &$videojuegos) {
+        $jsonString = file_get_contents($archivoJuegos);
+        $videojuegos = json_decode($jsonString, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            die('Error  JSON: ' . json_last_error_msg());
+        }
+    }
+
+    $videojuegos = array();
+    cargarVideojuegos("games.json", $videojuegos);
+
+?>
 </body>
 </html>
