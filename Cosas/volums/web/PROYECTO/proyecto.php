@@ -7,6 +7,7 @@
 
 <body>
     <?php
+    include 'funciones.php';
     referencias_menu();
     ?>
 </body>
