@@ -29,10 +29,6 @@
         }
         print_r($videojuegos);
     }
-
-    $videojuegos = array();
-    cargarVideojuegos("games.json", $videojuegos);
-
 ?>
 </body>
 </html>
