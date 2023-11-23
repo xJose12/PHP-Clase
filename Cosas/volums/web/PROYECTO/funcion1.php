@@ -6,5 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    include 'proyecto.php';
+    cargarVideojuegos();
+    ?>
 </body>
 </html>
