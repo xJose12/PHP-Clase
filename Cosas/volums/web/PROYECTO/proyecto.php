@@ -27,7 +27,6 @@
         if (json_last_error() !== JSON_ERROR_NONE) {
             die('Error  JSON: ' . json_last_error_msg());
         }
-        print_r($videojuegos);
     }
 ?>
 </body>
