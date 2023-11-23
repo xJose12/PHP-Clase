@@ -5,11 +5,9 @@
 </head>
 <body>
     <?php
-<<<<<<< HEAD
     include 'proyecto.php';
-    cargarVideojuegos();
-=======
->>>>>>> 4ae690ff7ae70d96eb7f0c35ccf0fdaae35ca974
+    $videojuegos = array();
+    cargarVideojuegos("games.json", $videojuegos);
     ?>
 </body>
 </html>
