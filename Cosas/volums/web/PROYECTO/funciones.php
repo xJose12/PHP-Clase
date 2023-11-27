@@ -49,4 +49,14 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
-
+function asignarCodigo(&$videojuegos) {
+$contador = 1;
+    foreach ($videojuegos as &$titulos) {
+        if ($titulos['codigo'] == null) {
+            $titulos= array( 'Codigo' => $contador) + $titulos;
+            $contador++;
+        } else {
+            
+        }
+    }
+}
