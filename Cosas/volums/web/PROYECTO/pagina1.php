@@ -9,12 +9,12 @@
 
 <body>
     <?php
-    //Convertimos en array el archivo
+    //CONVERTIMOS EN ARRAY EN ARCHIVO 
     include 'funciones.php';
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
 
-    //Hacemos la función para imprimir la tabla
+    //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
     imprimirTabla($videojuegos);
 
     ?>

@@ -30,7 +30,7 @@ function cargarVideojuegos($archivoJuegos, &$videojuegos)
 // FUNCION 1
 function imprimirTabla(&$videojuegos)
 {
-    //Convertimos en tabla los datos del array
+    //CONVERTIR LOS DATOS EN TABLA DE ARRAY
     echo "<table border = 1px>";
     echo "<tr>";
     foreach ($videojuegos[0] as $titulos => $valor) {
@@ -47,3 +47,6 @@ function imprimirTabla(&$videojuegos)
     }
     echo "</table>";
 }
+
+//FUNCION 2
+

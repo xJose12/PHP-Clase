@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    //Convertimos en array el archivo
+    //CONVERTIMOS EN ARRRAY EL ARCHIVO
     include 'funciones.php';
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
