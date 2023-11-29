@@ -49,7 +49,7 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
-function asignarCodigo(&$videojuegos)
+function asignarCodigo($nombreArchivo, &$videojuegos)
 {
     $contador = 1;
     foreach ($videojuegos as &$titulos) {
@@ -61,5 +61,5 @@ function asignarCodigo(&$videojuegos)
     }
     $json_videojuegos = json_encode($videojuegos, JSON_PRETTY_PRINT);
 
-    file_put_contents('games.json', $json_videojuegos);
+    file_put_contents($nombreArchivo, $json_videojuegos);
 }
