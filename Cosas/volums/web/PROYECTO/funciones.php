@@ -49,14 +49,17 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
-function asignarCodigo(&$videojuegos) {
+function asignarCodigo(&$videojuegos)
+{
     $contador = 1;
-        foreach ($videojuegos as &$titulos) {
-            if ($titulos['Codigo'] == null) {
-                $titulos= array( 'Codigo' => $contador) + $titulos;
-                $contador++;
-            } else {
-
-            }
+    foreach ($videojuegos as &$titulos) {
+        if ($titulos['Codigo'] == null) {
+            $titulos = array('Codigo' => $contador) + $titulos;
+            $contador++;
+        } else {
+        }
     }
+    $json_videojuegos = json_encode($videojuegos, JSON_PRETTY_PRINT);
+
+    file_put_contents('games.json', $json_videojuegos);
 }
