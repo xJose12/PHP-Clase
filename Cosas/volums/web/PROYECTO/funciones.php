@@ -53,10 +53,20 @@ function asignarCodigo($nombreArchivo, &$videojuegos)
 {
     $contador = 1;
     foreach ($videojuegos as &$titulos) {
+        $codigo = $titulos['Codigo'];
+        if ($valorMaximo == Null || $codigo > $valorMaximo) {
+            $valorMaximo = $codigo;
+
+            if ($valorMaximo != NULL) {
+                $contador = $valorMaximo + 1;
+            }
+        }
+    }
+
+    foreach ($videojuegos as &$titulos) {
         if ($titulos['Codigo'] == null) {
             $titulos = array('Codigo' => $contador) + $titulos;
             $contador++;
-        } else {
         }
     }
     $json_videojuegos = json_encode($videojuegos, JSON_PRETTY_PRINT);
