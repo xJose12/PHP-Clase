@@ -3,7 +3,7 @@
 // FUNCION DE IMPRIMIR MENU PRINCIPAL
 function referencias_menu()
 {
-    echo '<a href="proyecto.php"> Pagina principal</a><br>';
+    echo '<a href="proyecto.php"> Pagina Inicio</a><br>';
     echo '<a href="pagina1.php"> Funcion 1</a><br>';
     echo '<a href="pagina2.php"> Funcion 2</a><br>';
     echo '<a href="pagina3.php"> Funcion 3</a><br>';
@@ -52,11 +52,11 @@ function imprimirTabla(&$videojuegos)
 function asignarCodigo(&$videojuegos) {
     $contador = 1;
         foreach ($videojuegos as &$titulos) {
-            if ($titulos['codigo'] == null) {
-                $titulos = array( 'Codigo' => $contador) + $titulos;
+            if ($titulos['Codigo'] == null) {
+                $titulos= array( 'Codigo' => $contador) + $titulos;
                 $contador++;
             } else {
-                
+
             }
     }
 }
