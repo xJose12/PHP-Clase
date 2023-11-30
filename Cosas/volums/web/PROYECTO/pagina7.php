@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <?php
+    <?php    
+    include 'funciones.php';
     referencias_menu();
     //Convertimos en array el archivo
-    include 'funciones.php';
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
     ?>

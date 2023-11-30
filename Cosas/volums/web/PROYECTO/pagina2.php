@@ -9,9 +9,9 @@
 
 <body>
     <?php
+    include 'funciones.php';
     referencias_menu();
     //CONVERTIMOS EN ARRRAY EL ARCHIVO
-    include 'funciones.php';
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
 
