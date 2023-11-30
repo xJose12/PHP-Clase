@@ -9,6 +9,7 @@
 
 <body>
     <?php
+    referencias_menu();
     //Convertimos en array el archivo
     include 'funciones.php';
     $videojuegos = array();
