@@ -70,6 +70,7 @@ function asignarCodigo($nombreArchivo, &$videojuegos)
             $contador++;
         }
     }
+    sort($videojuegos);
     $json_videojuegos = json_encode($videojuegos, JSON_PRETTY_PRINT);
 
     file_put_contents($nombreArchivo, $json_videojuegos);
