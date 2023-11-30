@@ -94,8 +94,9 @@ function ficheroEliminar($fecha1, $fecha2, &$videojuegos) {
 function ficheroExpiracion(&$videojuegos) {
     foreach($videojuegos as &$titulos) {
         $lanzamiento = ($titulos['Llançament']);
-        date_add($lanzamiento, date_interval_create_from_date_string("5 years"));
-        $titulos['Expiracion'] = $lanzamiento;
+        $fecha = DateTime::createFromFormat("Y-m-d", $lanzamiento);
+        $fecha->add(new DateInterval('P5Y'));
+        $titulos['Expiracion'] = $fecha;
     }
     $videojuegos = array_values($videojuegos);
     $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
