@@ -75,3 +75,12 @@ function asignarCodigo($nombreArchivo, &$videojuegos)
 
     file_put_contents($nombreArchivo, $json_videojuegos);
 }
+
+//FUNCION 3
+// Convertir array a format JSON
+function ficheroEliminar ($nombreArchivo, &$videojuegos)
+{
+$json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
+// Desar el format JSON a un arxiu JSON
+file_put_contents($nombreArchivo, $json_datos);
+}

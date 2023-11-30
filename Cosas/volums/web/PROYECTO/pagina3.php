@@ -13,6 +13,8 @@
     include 'funciones.php';
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
+    //Crear el archivo JSON_Resultat_Eliminar.json
+    carregaArrayAFitxer("JSON_Resultat_Eliminar.json", $videojuegos);
     ?>
 </body>
 
