@@ -52,12 +52,13 @@ function imprimirTabla(&$videojuegos)
 function asignarCodigo($nombreArchivo, &$videojuegos)
 {
     $contador = 1;
+    $valorMaximo = null;
     foreach ($videojuegos as &$titulos) {
         $codigo = $titulos['Codigo'];
         if ($valorMaximo == Null || $codigo > $valorMaximo) {
             $valorMaximo = $codigo;
 
-            if ($valorMaximo != NULL) {
+            if ($valorMaximo != null) {
                 $contador = $valorMaximo + 1;
             }
         }
