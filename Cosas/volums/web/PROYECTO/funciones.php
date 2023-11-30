@@ -92,8 +92,8 @@ function ficheroEliminar($fecha1, $fecha2, &$videojuegos) {
 
 //FUNCION4
 function ficheroExpiracion(&$videojuegos) {
-    foreach($videojuegos as $titulos) {
-        $lanzamiento = strtotime($titulos['Llançament']); var_dump($lanzamiento);
+    foreach($videojuegos as &$titulos) {
+        $lanzamiento = ($titulos['Llançament']);
         date_add($lanzamiento, date_interval_create_from_date_string("5 years"));
         $titulos['Expiracion'] = $lanzamiento;
     }
