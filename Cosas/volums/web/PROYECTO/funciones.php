@@ -49,8 +49,7 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
-function asignarCodigo($nombreArchivo, &$videojuegos)
-{
+function asignarCodigo($nombreArchivo, &$videojuegos) {
     $contador = 1;
     $valorMaximo = null;
     foreach ($videojuegos as &$titulos) {
@@ -78,9 +77,23 @@ function asignarCodigo($nombreArchivo, &$videojuegos)
 
 //FUNCION 3
 // Convertir array a format JSON
-function ficheroEliminar ($nombreArchivo, &$videojuegos)
-{
-$json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
-// Desar el format JSON a un arxiu JSON
-file_put_contents($nombreArchivo, $json_datos);
+function ficheroEliminar($fecha1, $fecha2, &$videojuegos) {
+    foreach ($videojuegos as $titulos => $valor) {
+        if($valor['Llançament'] >= $fecha1 && $valor['Llançament'] <= $fecha2) {
+            unset($videojuegos[$titulos]);
+        } 
+        
+    }
+    $videojuegos = array_values($videojuegos);
+    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
+    // Desar el format JSON a un arxiu JSON
+    file_put_contents("JSON_Resultat_Eliminar.json", $json_datos);
+}
+
+//FUNCION4
+function ficheroExpiracion(&$videojuegos) {
+    $videojuegos = array_values($videojuegos);
+    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
+    // Desar el format JSON a un arxiu JSON
+    file_put_contents("JSON_Resultat_Eliminar.json", $json_datos);
 }
