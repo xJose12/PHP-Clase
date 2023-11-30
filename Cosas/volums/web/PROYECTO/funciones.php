@@ -98,9 +98,11 @@ function ficheroExpiracion(&$videojuegos) {
         $fechaLanzamiento->modify('+5 years');
         $titulos['Expiracion'] = $fechaLanzamiento->format('Y-m-d');
     }
-    
+
     $videojuegos = array_values($videojuegos);
     $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
     // Desar el format JSON a un arxiu JSON
     file_put_contents("JSON_Resultat_Data_Expiració.json", $json_datos);
 }
+
+//FUNCION5
