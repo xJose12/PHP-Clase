@@ -92,8 +92,13 @@ function ficheroEliminar($fecha1, $fecha2, &$videojuegos) {
 
 //FUNCION4
 function ficheroExpiracion(&$videojuegos) {
+    foreach($videojuegos as $titulos) {
+        $lanzamiento = strtotime($titulos['Llançament']); var_dump($lanzamiento);
+        date_add($lanzamiento, date_interval_create_from_date_string("5 years"));
+        $titulos['Expiracion'] = $lanzamiento;
+    }
     $videojuegos = array_values($videojuegos);
     $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
     // Desar el format JSON a un arxiu JSON
-    file_put_contents("JSON_Resultat_Eliminar.json", $json_datos);
+    file_put_contents("JSON_Resultat_Data_Expiració.json", $json_datos);
 }

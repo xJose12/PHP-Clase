@@ -13,6 +13,8 @@
     include 'funciones.php';
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
+    ficheroExpiracion($videojuegos);
+    imprimirTabla($videojuegos);
     ?>
 </body>
 
