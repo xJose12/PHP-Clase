@@ -49,7 +49,8 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
-function asignarCodigo($nombreArchivo, &$videojuegos) {
+function asignarCodigo($nombreArchivo, &$videojuegos)
+{
     $contador = 1;
     $valorMaximo = null;
     foreach ($videojuegos as &$titulos) {
@@ -77,12 +78,12 @@ function asignarCodigo($nombreArchivo, &$videojuegos) {
 
 //FUNCION 3
 // Convertir array a format JSON
-function ficheroEliminar($fecha1, $fecha2, &$videojuegos) {
+function ficheroEliminar($fecha1, $fecha2, &$videojuegos)
+{
     foreach ($videojuegos as $titulos => $valor) {
-        if($valor['Llançament'] >= $fecha1 && $valor['Llançament'] <= $fecha2) {
+        if ($valor['Llançament'] >= $fecha1 && $valor['Llançament'] <= $fecha2) {
             unset($videojuegos[$titulos]);
-        } 
-        
+        }
     }
     $videojuegos = array_values($videojuegos);
     $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
@@ -91,8 +92,9 @@ function ficheroEliminar($fecha1, $fecha2, &$videojuegos) {
 }
 
 //FUNCION4
-function ficheroExpiracion(&$videojuegos) {
-    foreach($videojuegos as &$titulos) {
+function ficheroExpiracion(&$videojuegos)
+{
+    foreach ($videojuegos as &$titulos) {
         $lanzamiento = $titulos['Llançament'];
         $fechaLanzamiento = new DateTime($lanzamiento);
         $fechaLanzamiento->modify('+5 years');
@@ -106,3 +108,7 @@ function ficheroExpiracion(&$videojuegos) {
 }
 
 //FUNCION5
+function comprobarRepetidos(&$videojuegos)
+{
+    
+}
