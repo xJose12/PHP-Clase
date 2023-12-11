@@ -99,4 +99,46 @@ $timestamp = strtotime($timestamp);
 fechaConTimeStamp($timestamp);
 ?>
 
+<!-- 4. Escriu una funció en PHP que donades dues dates per paràmetre mostri quina és major -->
+<h2>4. Escriu una funció en PHP que donades dues dates per paràmetre mostri quina és major</h2>
+
+<?php
+function compararDates($data1, $data2) {
+    $dataObject1 = new DateTime($data1);
+    $dataObject2 = new DateTime($data2);
+
+    if ($dataObject1 > $dataObject2) {
+        return "La primera data ($data1) és major que la segona data ($data2)";
+    } elseif ($dataObject1 < $dataObject2) {
+        return "La segona data ($data2) és major que la primera data ($data1)";
+    } else {
+        return "Les dues dates són iguals";
+    }
+}
+
+$data1 = "2023-01-01";
+$data2 = "2023-12-31";
+
+$resultat = compararDates($data1, $data2);
+echo $resultat;
+?>
+
+<!-- 5. Escriu una funció en PHP que sumi a una data donada per paràmetre com a string, una quantitat de dies passada com a paràmetre numèric (fes servir el mètode strtotime()) -->
+<h2>5. Escriu una funció en PHP que sumi a una data donada per paràmetre com a string, una quantitat de dies passada com a paràmetre numèric (fes servir el mètode strtotime())</h2>
+
+<?php
+function sumarDies($data, $diesASumar) {
+    $dataObject = new DateTime($data);
+    $dataObject->modify("+$diesASumar days");
+    return $dataObject->format('Y-m-d');
+}
+
+$dataInicial = "2023-01-01";
+$diesASumar = 10;
+
+$dataNova = sumarDies($dataInicial, $diesASumar);
+echo "Data inicial: $dataInicial <br>";
+echo "Data després de sumar $diesASumar dies: $dataNova";
+?>
+
 </html>
