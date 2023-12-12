@@ -143,3 +143,26 @@ function ficheroRepetidos(&$videojuegos) {
     $json_datos = json_encode($repetidos, JSON_PRETTY_PRINT);
     file_put_contents("JSON_Resultat_repetits.json", $json_datos);
 }
+
+//funcion 7
+function ficheroEliminarRepetidos(&$videojuegos) {
+    $nombres = array();
+    $repetidos = array();
+    $noRepetidos = array();
+
+    foreach ($videojuegos as $titulos) {
+        $nombre = $titulos['Nom'];
+
+        if (in_array($nombre, $nombres)) {
+            $repetidos[] = $titulos;
+        } else {
+            $nombres[] = $nombre;
+            $noRepetidos[] = $titulos;
+        }
+    } 
+
+    $json_datos = json_encode($noRepetidos, JSON_PRETTY_PRINT);
+    file_put_contents("JSON_Resultat_eliminar_repetits.json", $json_datos);
+}
+
+

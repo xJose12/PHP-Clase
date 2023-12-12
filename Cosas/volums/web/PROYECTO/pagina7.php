@@ -14,6 +14,7 @@
     //Convertimos en array el archivo
     $videojuegos = array();
     cargarVideojuegos("games.json", $videojuegos);
+    ficheroEliminarRepetidos($videojuegos);
     ?>
 </body>
 
