@@ -1,0 +1,23 @@
+[
+    {
+        "Codigo": 51,
+        "Nom": "Deathloop",
+        "Desenvolupador": "Arkane Studios",
+        "Plataforma": "PC, PlayStation 5",
+        "Llan\u00e7ament": "2021-09-14"
+    },
+    {
+        "Codigo": 52,
+        "Nom": "Far Cry 6",
+        "Desenvolupador": "Ubisoft",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
+        "Llan\u00e7ament": "2021-10-07"
+    },
+    {
+        "Codigo": 53,
+        "Nom": "NieR Replicant ver.1.22474487139...",
+        "Desenvolupador": "Toylogic",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2021-04-23"
+    }
+]

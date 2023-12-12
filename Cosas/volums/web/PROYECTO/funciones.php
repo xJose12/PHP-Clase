@@ -113,7 +113,6 @@ function comprobarRepetidos(&$videojuegos)
     $nombres = array();
     foreach ($videojuegos as &$titulos) {
         $nombre = $titulos['Nom'];
-        #$comprobar = array_search($titulos['Nom'], $nombre, true);
         
         if (in_array($nombre, $nombres)) {
             echo "Hay registros repetidos";
@@ -128,5 +127,19 @@ function comprobarRepetidos(&$videojuegos)
 
 //FUNCION 6
 function ficheroRepetidos(&$videojuegos) {
+    $nombres = array();
+    $repetidos = array();
 
+    foreach ($videojuegos as $titulos) {
+        $nombre = $titulos['Nom'];
+
+        if (in_array($nombre, $nombres)) {
+            $repetidos[] = $titulos;
+        } else {
+            $nombres[] = $nombre;
+        }
+    } 
+
+    $json_datos = json_encode($repetidos, JSON_PRETTY_PRINT);
+    file_put_contents("JSON_Resultat_repetits.json", $json_datos);
 }
