@@ -127,3 +127,6 @@ function comprobarRepetidos(&$videojuegos)
 }
 
 //FUNCION 6
+function ficheroRepetidos(&$videojuegos) {
+
+}
