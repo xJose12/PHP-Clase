@@ -91,7 +91,7 @@ function ficheroEliminar($fecha1, $fecha2, &$videojuegos)
     file_put_contents("JSON_Resultat_Eliminar.json", $json_datos);
 }
 
-//FUNCION4
+//FUNCION 4
 function ficheroExpiracion(&$videojuegos)
 {
     foreach ($videojuegos as &$titulos) {
@@ -107,8 +107,23 @@ function ficheroExpiracion(&$videojuegos)
     file_put_contents("JSON_Resultat_Data_Expiració.json", $json_datos);
 }
 
-//FUNCION5
+//FUNCION 5
 function comprobarRepetidos(&$videojuegos)
 {
-    
+    $nombres = array();
+    foreach ($videojuegos as &$titulos) {
+        $nombre = $titulos['Nom'];
+        #$comprobar = array_search($titulos['Nom'], $nombre, true);
+        
+        if (in_array($nombre, $nombres)) {
+            echo "Hay registros repetidos";
+            return 1;
+        } else {
+            $nombres[] = $nombre;
+        }
+    } 
+    echo "No hay registros repetidos";
+    return 0;   
 }
+
+//FUNCION 6
