@@ -211,7 +211,14 @@ function contarVideojuegos(&$videojuegos) {
     }
     ksort($años);
     
+    echo "<table border='1'>";
+    echo "<tr><th>Año</th><th>Cantidad de Videojuegos</th></tr>";
+    
     foreach($años as $año => $cantidad) {
-        echo "Año $año: $cantidad Videojuego", "<br>";
+        echo "<tr>";
+        echo "<td>$año</td><td>$cantidad</td>";
+        echo "</tr>";
     }
+    
+    echo "</table>";
 }

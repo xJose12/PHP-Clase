@@ -11,6 +11,7 @@
 <body>
     <header>
         <h1>PROYECTO PHP</h1>
+        <h3>Ana Maria Aguilera Contreras y Jose Antonio Valiente Guerrero</h3>
         <nav>
             <?php
             include 'funciones.php';
