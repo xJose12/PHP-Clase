@@ -8,14 +8,6 @@
         "Expiracion": "2022-03-03"
     },
     {
-        "Codigo": 2,
-        "Nom": "The Witcher 3: Wild Hunt",
-        "Desenvolupador": "CD Projekt Red",
-        "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2015-05-19",
-        "Expiracion": "2020-05-19"
-    },
-    {
         "Codigo": 3,
         "Nom": "Red Dead Redemption 2",
         "Desenvolupador": "Rockstar Games",
@@ -30,14 +22,6 @@
         "Plataforma": "Nintendo Switch",
         "Llan\u00e7ament": "2017-10-27",
         "Expiracion": "2022-10-27"
-    },
-    {
-        "Codigo": 5,
-        "Nom": "Cyberpunk 2077",
-        "Desenvolupador": "CD Projekt Red",
-        "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2020-12-10",
-        "Expiracion": "2025-12-10"
     },
     {
         "Codigo": 6,
@@ -256,6 +240,14 @@
         "Expiracion": "2026-03-26"
     },
     {
+        "Codigo": 32,
+        "Nom": "The Witcher 3: Wild Hunt",
+        "Desenvolupador": "CD Projekt Red",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2015-05-19",
+        "Expiracion": "2020-05-19"
+    },
+    {
         "Codigo": 33,
         "Nom": "Little Nightmares II",
         "Desenvolupador": "Tarsier Studios",
@@ -345,6 +337,14 @@
     },
     {
         "Codigo": 44,
+        "Nom": "Riders Republic",
+        "Desenvolupador": "Ubisoft Annecy",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
+        "Llan\u00e7ament": "2021-10-28",
+        "Expiracion": "2026-10-28"
+    },
+    {
+        "Codigo": 45,
         "Nom": "The Medium",
         "Desenvolupador": "Bloober Team",
         "Plataforma": "PC, Xbox Series X\/S",
@@ -352,7 +352,7 @@
         "Expiracion": "2026-01-28"
     },
     {
-        "Codigo": 45,
+        "Codigo": 46,
         "Nom": "Resident Evil 3 Remake",
         "Desenvolupador": "Capcom",
         "Plataforma": "PC, PlayStation 4, Xbox One",
@@ -360,7 +360,15 @@
         "Expiracion": "2025-04-03"
     },
     {
-        "Codigo": 46,
+        "Codigo": 47,
+        "Nom": "Resident Evil 3 Remake",
+        "Desenvolupador": "Capcom",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2020-04-03",
+        "Expiracion": "2025-04-03"
+    },
+    {
+        "Codigo": 48,
         "Nom": "Bravely Default II",
         "Desenvolupador": "Silicon Studio \/ Claytechworks",
         "Plataforma": "Nintendo Switch",
@@ -368,7 +376,7 @@
         "Expiracion": "2026-02-26"
     },
     {
-        "Codigo": 47,
+        "Codigo": 49,
         "Nom": "Age of Empires IV",
         "Desenvolupador": "Relic Entertainment",
         "Plataforma": "PC",
@@ -376,7 +384,7 @@
         "Expiracion": "2026-10-28"
     },
     {
-        "Codigo": 48,
+        "Codigo": 50,
         "Nom": "Halo Infinite",
         "Desenvolupador": "343 Industries",
         "Plataforma": "PC, Xbox Series X\/S",
@@ -384,7 +392,7 @@
         "Expiracion": "2026-12-08"
     },
     {
-        "Codigo": 49,
+        "Codigo": 51,
         "Nom": "Far Cry 6",
         "Desenvolupador": "Ubisoft",
         "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
@@ -392,11 +400,27 @@
         "Expiracion": "2026-10-07"
     },
     {
-        "Codigo": 50,
+        "Codigo": 52,
+        "Nom": "Far Cry 6",
+        "Desenvolupador": "Ubisoft",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
+        "Llan\u00e7ament": "2021-10-07",
+        "Expiracion": "2026-10-07"
+    },
+    {
+        "Codigo": 53,
         "Nom": "Deathloop",
         "Desenvolupador": "Arkane Studios",
         "Plataforma": "PC, PlayStation 5",
         "Llan\u00e7ament": "2021-09-14",
         "Expiracion": "2026-09-14"
+    },
+    {
+        "Codigo": 1000,
+        "Nom": "Cyberpunk 2077",
+        "Desenvolupador": "CD Projekt Red",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2020-12-10",
+        "Expiracion": "2025-12-10"
     }
 ]

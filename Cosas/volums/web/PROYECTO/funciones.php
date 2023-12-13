@@ -27,6 +27,15 @@ function cargarVideojuegos($archivoJuegos, &$videojuegos)
     }
 }
 
+//FUNCION DE CREACION DE ARCHIVOS JSON
+function crearJSON(&$videojuegos, $nombreArchivo) 
+{
+    $videojuegos = array_values($videojuegos);
+    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
+    // Desar el format JSON a un arxiu JSON
+    file_put_contents($nombreArchivo, $json_datos);    
+}
+
 // FUNCION 1
 function imprimirTabla(&$videojuegos)
 {
@@ -49,13 +58,13 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
-function asignarCodigo($nombreArchivo, &$videojuegos)
+function asignarCodigo(&$videojuegos)
 {
     $contador = 1;
     $valorMaximo = null;
     foreach ($videojuegos as &$titulos) {
         $codigo = $titulos['Codigo'];
-        if ($valorMaximo == Null || $codigo > $valorMaximo) {
+        if ($valorMaximo == null || $codigo > $valorMaximo) {
             $valorMaximo = $codigo;
 
             if ($valorMaximo != null) {
@@ -71,9 +80,7 @@ function asignarCodigo($nombreArchivo, &$videojuegos)
         }
     }
     sort($videojuegos);
-    $json_videojuegos = json_encode($videojuegos, JSON_PRETTY_PRINT);
-
-    file_put_contents($nombreArchivo, $json_videojuegos);
+    crearJSON($videojuegos, "games.json"); 
 }
 
 //FUNCION 3
@@ -85,10 +92,7 @@ function ficheroEliminar($fecha1, $fecha2, &$videojuegos)
             unset($videojuegos[$titulos]);
         }
     }
-    $videojuegos = array_values($videojuegos);
-    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
-    // Desar el format JSON a un arxiu JSON
-    file_put_contents("JSON_Resultat_Eliminar.json", $json_datos);
+    crearJSON($videojuegos, "JSON_Resultat_Eliminar.json");
 }
 
 //FUNCION 4
@@ -100,11 +104,7 @@ function ficheroExpiracion(&$videojuegos)
         $fechaLanzamiento->modify('+5 years');
         $titulos['Expiracion'] = $fechaLanzamiento->format('Y-m-d');
     }
-
-    $videojuegos = array_values($videojuegos);
-    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
-    // Desar el format JSON a un arxiu JSON
-    file_put_contents("JSON_Resultat_Data_Expiració.json", $json_datos);
+    crearJSON($videojuegos,"JSON_Resultat_Data_Expiració.json");
 }
 
 //FUNCION 5
@@ -140,8 +140,7 @@ function ficheroRepetidos(&$videojuegos) {
         }
     } 
 
-    $json_datos = json_encode($repetidos, JSON_PRETTY_PRINT);
-    file_put_contents("JSON_Resultat_repetits.json", $json_datos);
+    crearJSON($repetidos,"JSON_Resultat_repetits.json");
 }
 
 //FUNCION 7
@@ -160,9 +159,7 @@ function ficheroEliminarRepetidos(&$videojuegos) {
             $noRepetidos[] = $titulos;
         }
     } 
-
-    $json_datos = json_encode($noRepetidos, JSON_PRETTY_PRINT);
-    file_put_contents("JSON_Resultat_eliminar_repetits.json", $json_datos);
+    crearJSON($noRepetidos,"JSON_Resultat_eliminar_repetits.json");
 }
 
 //FUNCION 8
@@ -197,9 +194,7 @@ function ficheroOrdenado(&$videojuegos) {
     $nombres = array_column($videojuegos, 'Nom');
     array_multisort($nombres, $videojuegos);
     
-    $videojuegos = array_values($videojuegos);
-    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
-    file_put_contents("JSON_Resultat_ordenat_alfabetic.json", $json_datos);
+    crearJSON($videojuegos, "JSON_Resultat_ordenat_alfabetic.json");
 }
 
 //FUNCION 10
