@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 5 PHP</h1>
+        <h1>PAGINA 5</h1>
+        <h2>Comprobar repetidos</h2>
         <nav>
             <?php
             include 'funciones.php';

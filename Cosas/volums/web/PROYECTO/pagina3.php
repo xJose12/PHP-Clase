@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 3 PHP</h1>
+        <h1>PAGINA 3</h1>
+        <h2>Eliminar entre 2 fechas</h2>
         <nav>
             <?php
             include 'funciones.php';

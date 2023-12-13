@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 4 PHP</h1>
+        <h1>PAGINA 4</h1>
+        <h2>Agregar fecha de expiración</h2>
         <nav>
             <?php
             include 'funciones.php';

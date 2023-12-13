@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 8 PHP</h1>
+        <h1>PAGINA 8</h1>
+        <h2>Videojuego más moderno y más antiguo</h2>
         <nav>
             <?php
             include 'funciones.php';

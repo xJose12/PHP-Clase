@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 10 PHP</h1>
+        <h1>PAGINA 10</h1>
+        <h2>Contar los videojuegos de cada año</h2>
         <nav>
             <?php
             include 'funciones.php';

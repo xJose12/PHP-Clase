@@ -11,6 +11,7 @@
 <body>
     <header>
         <h1>PAGINA 2</h1>
+        <h2>Asignar un codigo</h2>
         <nav>
             <?php
             include 'funciones.php';

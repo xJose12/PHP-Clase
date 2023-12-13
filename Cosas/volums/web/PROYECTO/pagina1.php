@@ -11,6 +11,7 @@
 <body>
     <header>
         <h1>PAGINA 1</h1>
+        <H2>Mostar los videojuegos</H2>
         <nav>
             <?php
             include 'funciones.php';

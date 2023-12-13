@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 7 PHP</h1>
+        <h1>PAGINA 7</h1>
+        <h2>Eliminar repetidos</h2>
         <nav>
             <?php
             include 'funciones.php';

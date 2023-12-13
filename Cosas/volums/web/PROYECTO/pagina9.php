@@ -10,7 +10,8 @@
 
 <body>
     <header>
-        <h1>PAGINA 9 PHP</h1>
+        <h1>PAGINA 9</h1>
+        <h2>Ordenación alfabética de videojuegos</h2>
         <nav>
             <?php
             include 'funciones.php';
