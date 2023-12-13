@@ -115,13 +115,15 @@ function comprobarRepetidos(&$videojuegos)
         $nombre = $titulos['Nom'];
         
         if (in_array($nombre, $nombres)) {
-            echo "Hay registros repetidos";
+            echo "<h2>Hay registros repetidos</h2>";
+            echo "<img src=https://media.tenor.com/WsmiS-hUZkEAAAAj/verify.gif>";
             return 1;
         } else {
             $nombres[] = $nombre;
         }
     } 
-    echo "No hay registros repetidos";
+    echo "<h2>No hay registros repetidos</h2>";
+    echo "<img src=https://images.emojiterra.com/google/noto-emoji/unicode-15/animated/274c.gif>";
     return 0;   
 }
 

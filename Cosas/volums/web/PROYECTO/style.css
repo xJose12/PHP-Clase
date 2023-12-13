@@ -29,11 +29,16 @@ nav a:hover {
     background-color: #777;
 }
 
+main {
+    text-align: center;
+}
+
 img{
     display: block;
     margin: 0 auto;
     max-width: 100%;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
