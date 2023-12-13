@@ -1,1 +1,23 @@
-[]
+[
+    {
+        "Codigo": 51,
+        "Nom": "Back 4 Blood",
+        "Desenvolupador": "Turtle Rock Studios",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
+        "Llan\u00e7ament": "2021-10-12"
+    },
+    {
+        "Codigo": 52,
+        "Nom": "New Pok\u00e9mon Snap",
+        "Desenvolupador": "Bandai Namco Studios",
+        "Plataforma": "Nintendo Switch",
+        "Llan\u00e7ament": "2021-04-30"
+    },
+    {
+        "Codigo": 53,
+        "Nom": "It Takes Two",
+        "Desenvolupador": "Hazelight Studios",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
+        "Llan\u00e7ament": "2021-03-26"
+    }
+]
