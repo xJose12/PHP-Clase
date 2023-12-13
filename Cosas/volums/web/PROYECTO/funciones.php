@@ -196,12 +196,27 @@ function ModernoAntiguo(&$videojuegos) {
 function ficheroOrdenado(&$videojuegos) {
     $nombres = array_column($videojuegos, 'Nom');
     array_multisort($nombres, $videojuegos);
-    // $ordenados = [];
-    // foreach ($videojuegos as $videojuego) {
-    //     $ordenados[] = $videojuego;
-    // }
     
     $videojuegos = array_values($videojuegos);
     $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
     file_put_contents("JSON_Resultat_ordenat_alfabetic.json", $json_datos);
+}
+
+//FUNCION 10
+function contarVideojuegos(&$videojuegos) {
+    $años = [];
+    foreach($videojuegos as $titulos) {
+        $añoLanzamiento = date("Y", strtotime($titulos['Llançament']));
+        
+        if ($años[$añoLanzamiento] ) {
+            $años[$añoLanzamiento]++ ;
+        } else {
+            $años[$añoLanzamiento] = 1;
+        }
+    }
+    ksort($años);
+    
+    foreach($años as $año => $cantidad) {
+        echo "Año $año: $cantidad Videojuego", "<br>";
+    }
 }
