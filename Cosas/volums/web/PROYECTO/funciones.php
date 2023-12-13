@@ -1,3 +1,6 @@
+<!-- Ana Maria Aguilera Contreras -->
+<!-- Jose Antonio Valiente Guerrero -->
+
 <?php
 
 //FUNCION DE IMPRIMIR MENU PRINCIPAL
@@ -20,6 +23,9 @@ function referencias_menu()
 //FUNCION CARGA DE JSON DE LOS VIDEOJUEGOS
 function cargarVideojuegos($archivoJuegos, &$videojuegos)
 {
+    //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
+    $videojuegos = array();
+
     //EJECUCIÓN DEL CODIGO
     $jsonString = file_get_contents($archivoJuegos);
     $videojuegos = json_decode($jsonString, true);
@@ -68,7 +74,7 @@ function asignarCodigo(&$videojuegos)
     //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
     $contador = 1;
     $valorMaximo = null;
-        
+
     //EJECUCIÓN DEL CODIGO
     //RECORRE EL ARRAY 
     foreach ($videojuegos as &$titulos) {
@@ -98,7 +104,6 @@ function asignarCodigo(&$videojuegos)
 
     //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
     imprimirTabla($videojuegos);
-
 }
 
 //FUNCION 3
@@ -133,6 +138,9 @@ function ficheroExpiracion(&$videojuegos)
 
     //CREACION DEL NUEVO JSON QUE ALMACENARÁ EN "JSON_Resultat_Data_Expiració.json" LA VARIABLE &$videojuegos CON LOS JUEGOS Y LA FECHA DE EXPIRACION (+ 5 AÑOS)
     crearJSON($videojuegos, "JSON_Resultat_Data_Expiració.json");
+
+    //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
+    imprimirTabla($videojuegos);
 }
 
 //FUNCION 5
@@ -214,7 +222,7 @@ function ficheroEliminarRepetidos(&$videojuegos)
     crearJSON($noRepetidos, "JSON_Resultat_eliminar_repetits.json");
 
     echo "<h2>En la siguiente tabla se ha eliminado cualquier registro repetido que pudiera contener.</h2>";
-    
+
     //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
     imprimirTabla($noRepetidos);
 }
@@ -270,7 +278,7 @@ function ficheroOrdenado(&$videojuegos)
 
     //CREACION DEL NUEVO JSON QUE ALMACENARÁ EN "JSON_Resultat_ordenat_alfabetic.json" LA VARIABLE &$videojuegos CON LOS JUEGOS ORDENAOS POR NOMBRE ALFABETICAMENTE
     crearJSON($videojuegos, "JSON_Resultat_ordenat_alfabetic.json");
-    
+
     //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
     imprimirTabla($videojuegos);
 }
@@ -280,7 +288,7 @@ function ficheroOrdenado(&$videojuegos)
 function contarVideojuegos(&$videojuegos)
 {
     //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
-    $años = [];
+    $años = array();
 
     //EJECUCIÓN DEL CODIGO
     foreach ($videojuegos as $titulos) {

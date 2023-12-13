@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO PHP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
@@ -24,10 +24,7 @@
     <main>
         <div class="wrapper">
             <?php
-            //Convertimos en array el archivo
-            $videojuegos = array();
             cargarVideojuegos("games.json", $videojuegos);
-            //Crear el archivo JSON_Resultat_Eliminar.json
             ficheroEliminar("2016-01-01", "2020-12-31", $videojuegos);
             ?>
         </div>
