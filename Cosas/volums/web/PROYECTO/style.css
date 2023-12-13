@@ -23,6 +23,10 @@ header {
     padding: 10px;
 }
 
+h2 {
+    padding: 5px;
+}
+
 nav .wrapper {
     padding: 0;
 }

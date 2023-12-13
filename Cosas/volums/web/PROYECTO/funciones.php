@@ -123,7 +123,7 @@ function comprobarRepetidos(&$videojuegos)
         }
     } 
     echo "<h2>No hay registros repetidos</h2>";
-    echo "<img src=https://images.emojiterra.com/google/noto-emoji/unicode-15/animated/274c.gif>";
+    echo "<img src=https://images.emojiterra.com/google/noto-emoji/unicode-15/animated/274c.gif width = 20%>";
     return 0;   
 }
 
