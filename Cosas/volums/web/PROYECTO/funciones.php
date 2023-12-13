@@ -191,3 +191,18 @@ function ModernoAntiguo(&$videojuegos) {
     echo "Juego Moderno";
     print_r($juegoModerno);
 }
+
+//FUNCION 9
+function ficheroOrdenado(&$videojuegos) {
+     $nombres = array_column($videojuegos, 'Nom');
+     sort($nombres);
+    $ordenados = [];
+    foreach ($nombres as $titulos => $valor) {
+        $ordenados[$titulos] = [$titulos => $valor];
+    }
+   
+    
+    $ordenados = array_values($ordenados);
+    $json_datos = json_encode($ordenados, JSON_PRETTY_PRINT);
+    file_put_contents("JSON_Resultat_ordenat_alfabetic.json", $json_datos);
+}

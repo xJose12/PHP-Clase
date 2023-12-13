@@ -13,7 +13,9 @@
     referencias_menu();
     //Convertimos en array el archivo
     $videojuegos = array();
-    cargarVideojuegos("games.json", $videojuegos);
+    cargarVideojuegos("JSON_Resultat_ordenat_alfabetic.json", $videojuegos);
+    ficheroOrdenado($videojuegos);
+    imprimirTabla($videojuegos);
     ?>
 </body>
 
