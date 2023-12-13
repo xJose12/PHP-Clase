@@ -140,7 +140,13 @@ function ficheroRepetidos(&$videojuegos) {
         }
     } 
 
+    echo "<h2>En caso de haya repetidos se imprimirá la tabla, de lo contrario no.</h2>";
+
     crearJSON($repetidos,"JSON_Resultat_repetits.json");
+    
+    if ($repetidos != null) {
+        imprimirTabla($repetidos);
+    }
 }
 
 //FUNCION 7
@@ -160,6 +166,9 @@ function ficheroEliminarRepetidos(&$videojuegos) {
         }
     } 
     crearJSON($noRepetidos,"JSON_Resultat_eliminar_repetits.json");
+
+    echo "<h2>En la siguiente tabla se ha eliminado cualquier registro repetido que pudiera contener.</h2>";
+    imprimirTabla($noRepetidos);
 }
 
 //FUNCION 8

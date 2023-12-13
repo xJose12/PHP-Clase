@@ -7,6 +7,13 @@
         "Llan\u00e7ament": "2017-03-03"
     },
     {
+        "Codigo": 2,
+        "Nom": "The Witcher 3: Wild Hunt",
+        "Desenvolupador": "CD Projekt Red",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2015-05-19"
+    },
+    {
         "Codigo": 3,
         "Nom": "Red Dead Redemption 2",
         "Desenvolupador": "Rockstar Games",
@@ -19,6 +26,13 @@
         "Desenvolupador": "Nintendo",
         "Plataforma": "Nintendo Switch",
         "Llan\u00e7ament": "2017-10-27"
+    },
+    {
+        "Codigo": 5,
+        "Nom": "Cyberpunk 2077",
+        "Desenvolupador": "CD Projekt Red",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2020-12-10"
     },
     {
         "Codigo": 6,
@@ -210,13 +224,6 @@
         "Llan\u00e7ament": "2021-03-26"
     },
     {
-        "Codigo": 32,
-        "Nom": "The Witcher 3: Wild Hunt",
-        "Desenvolupador": "CD Projekt Red",
-        "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2015-05-19"
-    },
-    {
         "Codigo": 33,
         "Nom": "Little Nightmares II",
         "Desenvolupador": "Tarsier Studios",
@@ -295,79 +302,72 @@
     },
     {
         "Codigo": 44,
-        "Nom": "Riders Republic",
-        "Desenvolupador": "Ubisoft Annecy",
-        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
-        "Llan\u00e7ament": "2021-10-28"
-    },
-    {
-        "Codigo": 45,
         "Nom": "The Medium",
         "Desenvolupador": "Bloober Team",
         "Plataforma": "PC, Xbox Series X\/S",
         "Llan\u00e7ament": "2021-01-28"
     },
     {
+        "Codigo": 45,
+        "Nom": "Resident Evil 3 Remake",
+        "Desenvolupador": "Capcom",
+        "Plataforma": "PC, PlayStation 4, Xbox One",
+        "Llan\u00e7ament": "2020-04-03"
+    },
+    {
         "Codigo": 46,
-        "Nom": "Resident Evil 3 Remake",
-        "Desenvolupador": "Capcom",
-        "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2020-04-03"
-    },
-    {
-        "Codigo": 47,
-        "Nom": "Resident Evil 3 Remake",
-        "Desenvolupador": "Capcom",
-        "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2020-04-03"
-    },
-    {
-        "Codigo": 48,
         "Nom": "Bravely Default II",
         "Desenvolupador": "Silicon Studio \/ Claytechworks",
         "Plataforma": "Nintendo Switch",
         "Llan\u00e7ament": "2021-02-26"
     },
     {
-        "Codigo": 49,
+        "Codigo": 47,
         "Nom": "Age of Empires IV",
         "Desenvolupador": "Relic Entertainment",
         "Plataforma": "PC",
         "Llan\u00e7ament": "2021-10-28"
     },
     {
-        "Codigo": 50,
+        "Codigo": 48,
         "Nom": "Halo Infinite",
         "Desenvolupador": "343 Industries",
         "Plataforma": "PC, Xbox Series X\/S",
         "Llan\u00e7ament": "2021-12-08"
     },
     {
-        "Codigo": 51,
+        "Codigo": 49,
         "Nom": "Far Cry 6",
         "Desenvolupador": "Ubisoft",
         "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
         "Llan\u00e7ament": "2021-10-07"
     },
     {
-        "Codigo": 52,
-        "Nom": "Far Cry 6",
-        "Desenvolupador": "Ubisoft",
-        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
-        "Llan\u00e7ament": "2021-10-07"
-    },
-    {
-        "Codigo": 53,
+        "Codigo": 50,
         "Nom": "Deathloop",
         "Desenvolupador": "Arkane Studios",
         "Plataforma": "PC, PlayStation 5",
         "Llan\u00e7ament": "2021-09-14"
     },
     {
-        "Codigo": 1000,
-        "Nom": "Cyberpunk 2077",
-        "Desenvolupador": "CD Projekt Red",
+        "Codigo": 51,
+        "Nom": "NieR Replicant ver.1.22474487139...",
+        "Desenvolupador": "Toylogic",
         "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2020-12-10"
+        "Llan\u00e7ament": "2021-04-23"
+    },
+    {
+        "Codigo": 52,
+        "Nom": "Kena: Bridge of Spirits",
+        "Desenvolupador": "Ember Lab",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5",
+        "Llan\u00e7ament": "2021-09-21"
+    },
+    {
+        "Codigo": 53,
+        "Nom": "The Last of Us Part II",
+        "Desenvolupador": "Naughty Dog",
+        "Plataforma": "PlayStation 4, PlayStation 5",
+        "Llan\u00e7ament": "2020-06-19"
     }
 ]

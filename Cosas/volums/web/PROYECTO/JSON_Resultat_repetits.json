@@ -1,23 +1,20 @@
 [
     {
-        "Codigo": 44,
-        "Nom": "Riders Republic",
-        "Desenvolupador": "Ubisoft Annecy",
-        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
-        "Llan\u00e7ament": "2021-10-28"
-    },
-    {
-        "Codigo": 47,
-        "Nom": "Resident Evil 3 Remake",
-        "Desenvolupador": "Capcom",
+        "Nom": "NieR Replicant ver.1.22474487139...",
+        "Desenvolupador": "Toylogic",
         "Plataforma": "PC, PlayStation 4, Xbox One",
-        "Llan\u00e7ament": "2020-04-03"
+        "Llan\u00e7ament": "2021-04-23"
     },
     {
-        "Codigo": 52,
-        "Nom": "Far Cry 6",
-        "Desenvolupador": "Ubisoft",
-        "Plataforma": "PC, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X\/S",
-        "Llan\u00e7ament": "2021-10-07"
+        "Nom": "Kena: Bridge of Spirits",
+        "Desenvolupador": "Ember Lab",
+        "Plataforma": "PC, PlayStation 4, PlayStation 5",
+        "Llan\u00e7ament": "2021-09-21"
+    },
+    {
+        "Nom": "The Last of Us Part II",
+        "Desenvolupador": "Naughty Dog",
+        "Plataforma": "PlayStation 4, PlayStation 5",
+        "Llan\u00e7ament": "2020-06-19"
     }
 ]
