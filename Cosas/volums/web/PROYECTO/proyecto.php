@@ -10,17 +10,21 @@
 
 <body>
     <header>
-        <h1>PROYECTO PHP</h1>
-        <h3>Ana Maria Aguilera Contreras y Jose Antonio Valiente Guerrero</h3>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PROYECTO PHP</h1>
+            <h3>Ana Maria Aguilera Contreras y Jose Antonio Valiente Guerrero</h3>
+        </div>
     </header>
+    <nav>
+        <?php
+        include 'funciones.php';
+        referencias_menu();
+        ?>
+    </nav>
     <main>
-        <img src="https://lordicon.com/icons/wired/flat/1319-php-code-language.gif">
+        <div class="wrapper">
+            <img src="https://lordicon.com/icons/wired/flat/1319-php-code-language.gif">
+        </div>
     </main>
 </body>
 

@@ -10,22 +10,26 @@
 
 <body>
     <header>
-        <h1>PAGINA 9</h1>
-        <h2>Ordenación alfabética de videojuegos</h2>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PAGINA 9</h1>
+            <h2>Ordenación alfabética de videojuegos</h2>
+        </div>
     </header>
-    <main>
+    <nav>
         <?php
-    $videojuegos = array();
-    cargarVideojuegos("games.json", $videojuegos);
-    ficheroOrdenado($videojuegos);
-    imprimirTabla($videojuegos);
+        include 'funciones.php';
+        referencias_menu();
         ?>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <?php
+            $videojuegos = array();
+            cargarVideojuegos("games.json", $videojuegos);
+            ficheroOrdenado($videojuegos);
+            imprimirTabla($videojuegos);
+            ?>
+        </div>
     </main>
 </body>
 

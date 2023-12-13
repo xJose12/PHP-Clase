@@ -9,23 +9,29 @@
 </head>
 
 <body>
+
     <header>
-        <h1>PAGINA 10</h1>
-        <h2>Contar los videojuegos de cada año</h2>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PAGINA 10</h1>
+            <h2>Contar los videojuegos de cada año</h2>
+        </div>
+
     </header>
-    <main>
+    <nav>
         <?php
-    //Convertimos en array el archivo
-    $videojuegos = array();
-    cargarVideojuegos("games.json", $videojuegos);
-    contarVideojuegos($videojuegos);
+        include 'funciones.php';
+        referencias_menu();
         ?>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <?php
+            //Convertimos en array el archivo
+            $videojuegos = array();
+            cargarVideojuegos("games.json", $videojuegos);
+            contarVideojuegos($videojuegos);
+            ?>
+        </div>
     </main>
 </body>
 

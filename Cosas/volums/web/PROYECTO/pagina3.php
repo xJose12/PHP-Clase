@@ -10,25 +10,29 @@
 
 <body>
     <header>
-        <h1>PAGINA 3</h1>
-        <h2>Eliminar entre 2 fechas</h2>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PAGINA 3</h1>
+            <h2>Eliminar entre 2 fechas</h2>
+        </div>
     </header>
+    <nav>
+        <?php
+        include 'funciones.php';
+        referencias_menu();
+        ?>
+    </nav>
     <main>
-        <?php    
+        <div class="wrapper">
+            <?php
             //Convertimos en array el archivo
             $videojuegos = array();
             cargarVideojuegos("games.json", $videojuegos);
             //Crear el archivo JSON_Resultat_Eliminar.json
             ficheroEliminar("2016-01-01", "2020-12-31", $videojuegos);
             imprimirTabla($videojuegos);
-        ?>
-        </main>
+            ?>
+        </div>
+    </main>
 </body>
 
 </html>

@@ -10,22 +10,26 @@
 
 <body>
     <header>
-        <h1>PAGINA 7</h1>
-        <h2>Eliminar repetidos</h2>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PAGINA 7</h1>
+            <h2>Eliminar repetidos</h2>
+        </div>
     </header>
-    <main>
+    <nav>
         <?php
-        //Convertimos en array el archivo
-        $videojuegos = array();
-        cargarVideojuegos("games.json", $videojuegos);
-        ficheroEliminarRepetidos($videojuegos);
+        include 'funciones.php';
+        referencias_menu();
         ?>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <?php
+            //Convertimos en array el archivo
+            $videojuegos = array();
+            cargarVideojuegos("games.json", $videojuegos);
+            ficheroEliminarRepetidos($videojuegos);
+            ?>
+        </div>
     </main>
 </body>
 

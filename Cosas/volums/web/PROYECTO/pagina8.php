@@ -10,22 +10,26 @@
 
 <body>
     <header>
-        <h1>PAGINA 8</h1>
-        <h2>Videojuego más moderno y más antiguo</h2>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PAGINA 8</h1>
+            <h2>Videojuego más moderno y más antiguo</h2>
+        </div>
     </header>
-    <main>
+    <nav>
         <?php
-    //Convertimos en array el archivo
-    $videojuegos = array();
-    cargarVideojuegos("games.json", $videojuegos);
-    ModernoAntiguo($videojuegos);
+        include 'funciones.php';
+        referencias_menu();
         ?>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <?php
+            //Convertimos en array el archivo
+            $videojuegos = array();
+            cargarVideojuegos("games.json", $videojuegos);
+            ModernoAntiguo($videojuegos);
+            ?>
+        </div>
     </main>
 </body>
 

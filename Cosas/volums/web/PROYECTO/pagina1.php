@@ -10,24 +10,27 @@
 
 <body>
     <header>
-        <h1>PAGINA 1</h1>
-        <H2>Mostar los videojuegos</H2>
-        <nav>
-            <?php
-            include 'funciones.php';
-            referencias_menu();
-            ?>
-        </nav>
+        <div class="wrapper">
+            <h1>PAGINA 1</h1>
+            <H2>Mostar los videojuegos</H2>
+        </div>
     </header>
-    <main>
+    <nav>
         <?php
+        include 'funciones.php';
+        referencias_menu();
+        ?>
+    </nav>
+    <main>
+        <div class="wrapper">
+            <?php
             //CONVERTIMOS EN ARRAY EN ARCHIVO 
             $videojuegos = array();
             cargarVideojuegos("games.json", $videojuegos);
-
             //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
             imprimirTabla($videojuegos);
-        ?>
+            ?>
+        </div>
     </main>
 </body>
 
