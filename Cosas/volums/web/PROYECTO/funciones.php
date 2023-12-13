@@ -144,7 +144,7 @@ function ficheroRepetidos(&$videojuegos) {
     file_put_contents("JSON_Resultat_repetits.json", $json_datos);
 }
 
-//funcion 7
+//FUNCION 7
 function ficheroEliminarRepetidos(&$videojuegos) {
     $nombres = array();
     $repetidos = array();
@@ -165,4 +165,29 @@ function ficheroEliminarRepetidos(&$videojuegos) {
     file_put_contents("JSON_Resultat_eliminar_repetits.json", $json_datos);
 }
 
+//FUNCION 8
+function ModernoAntiguo(&$videojuegos) {
+    $juegoAntiguo = null;
+    $juegoModerno = null;
 
+    foreach($videojuegos as $titulos) {
+        $fechas = $titulos['Llançament'];
+        $fechaLanzamiento = new DateTime($fechas);
+
+        if ($juegoModerno == null || $fechaLanzamiento < $juegoAntiguo['Llançament']) {
+            $juegoAntiguo = $titulos;
+            $juegoAntiguo['Llançament'] = $fechaLanzamiento;
+        }
+
+        if ($juegoModerno == null || $fechaLanzamiento > $juegoModerno['Llançament']) {
+            $juegoModerno = $titulos;
+            $juegoModerno['Llançament'] = $fechaLanzamiento;
+        }
+
+    }
+    echo "Juego antiguo:";
+    print_r($juegoAntiguo);
+    echo "<br>", "<br>";
+    echo "Juego Moderno";
+    print_r($juegoModerno);
+}
