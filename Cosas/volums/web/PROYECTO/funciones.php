@@ -194,15 +194,14 @@ function ModernoAntiguo(&$videojuegos) {
 
 //FUNCION 9
 function ficheroOrdenado(&$videojuegos) {
-     $nombres = array_column($videojuegos, 'Nom');
-     sort($nombres);
-    $ordenados = [];
-    foreach ($nombres as $titulos => $valor) {
-        $ordenados[$titulos] = [$titulos => $valor];
-    }
-   
+    $nombres = array_column($videojuegos, 'Nom');
+    array_multisort($nombres, $videojuegos);
+    // $ordenados = [];
+    // foreach ($videojuegos as $videojuego) {
+    //     $ordenados[] = $videojuego;
+    // }
     
-    $ordenados = array_values($ordenados);
-    $json_datos = json_encode($ordenados, JSON_PRETTY_PRINT);
+    $videojuegos = array_values($videojuegos);
+    $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
     file_put_contents("JSON_Resultat_ordenat_alfabetic.json", $json_datos);
 }
