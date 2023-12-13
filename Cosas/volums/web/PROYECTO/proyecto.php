@@ -19,6 +19,9 @@
             ?>
         </nav>
     </header>
+    <main>
+        <img src="https://lordicon.com/icons/wired/flat/1319-php-code-language.gif">
+    </main>
 </body>
 
 </html>
