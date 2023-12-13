@@ -28,7 +28,6 @@
             $videojuegos = array();
             cargarVideojuegos("games.json", $videojuegos);
             asignarCodigo($videojuegos);
-            imprimirTabla($videojuegos);
             ?>
         </div>
     </main>

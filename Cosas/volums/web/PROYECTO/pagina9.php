@@ -27,7 +27,6 @@
             $videojuegos = array();
             cargarVideojuegos("games.json", $videojuegos);
             ficheroOrdenado($videojuegos);
-            imprimirTabla($videojuegos);
             ?>
         </div>
     </main>

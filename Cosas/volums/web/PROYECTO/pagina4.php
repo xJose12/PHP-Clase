@@ -28,6 +28,7 @@
             $videojuegos = array();
             cargarVideojuegos("games.json", $videojuegos);
             ficheroExpiracion($videojuegos);
+            //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
             imprimirTabla($videojuegos);
             ?>
         </div>

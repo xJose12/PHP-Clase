@@ -29,7 +29,6 @@
             cargarVideojuegos("games.json", $videojuegos);
             //Crear el archivo JSON_Resultat_Eliminar.json
             ficheroEliminar("2016-01-01", "2020-12-31", $videojuegos);
-            imprimirTabla($videojuegos);
             ?>
         </div>
     </main>

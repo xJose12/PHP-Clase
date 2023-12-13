@@ -1,8 +1,9 @@
 <?php
 
-// FUNCION DE IMPRIMIR MENU PRINCIPAL
+//FUNCION DE IMPRIMIR MENU PRINCIPAL
 function referencias_menu()
 {
+    //IMPRIMIR Y REDIRIGIR A LAS PAGINAS QUE CONTIENEN LAS FUNCIONES QUE VAMOS A CREAR
     echo '<a href="proyecto.php"> Pagina Inicio</a><br>';
     echo '<a href="pagina1.php"> Funcion 1</a><br>';
     echo '<a href="pagina2.php"> Funcion 2</a><br>';
@@ -16,7 +17,7 @@ function referencias_menu()
     echo '<a href="pagina10.php"> Funcion 10</a><br>';
 }
 
-// FUNCION CARGA DE JSON DE LOS VIDEOJUEGOS
+//FUNCION CARGA DE JSON DE LOS VIDEOJUEGOS
 function cargarVideojuegos($archivoJuegos, &$videojuegos)
 {
     $jsonString = file_get_contents($archivoJuegos);
@@ -28,18 +29,19 @@ function cargarVideojuegos($archivoJuegos, &$videojuegos)
 }
 
 //FUNCION DE CREACION DE ARCHIVOS JSON
-function crearJSON(&$videojuegos, $nombreArchivo) 
+function crearJSON(&$videojuegos, $nombreArchivo)
 {
+    // GUARDA LA VARIABLE &$videojuegos EN UN ARCHIVO JSON
     $videojuegos = array_values($videojuegos);
     $json_datos = json_encode($videojuegos, JSON_PRETTY_PRINT);
-    // Desar el format JSON a un arxiu JSON
-    file_put_contents($nombreArchivo, $json_datos);    
+    file_put_contents($nombreArchivo, $json_datos);
 }
 
-// FUNCION 1
+//FUNCION 1
+//CREACIÓN DE LA FUNCIÓN "IMPRIMIR TABLA" PASADO POR PARAMETRO EL ARRAY "VIDEOJUEGOS" 
 function imprimirTabla(&$videojuegos)
 {
-    //CONVERTIR LOS DATOS EN TABLA DE ARRAY
+    //IMPRIMIMOS LA TABLA AYUDANDONOS DEL FOREACH PARA RECORRER LA VARIABLE VALOR POR VALOR, CREANDO LA CABEZERA Y LAS FILAS UNA POR UNA
     echo "<table border = 1px>";
     echo "<tr>";
     foreach ($videojuegos[0] as $titulos => $valor) {
@@ -58,11 +60,15 @@ function imprimirTabla(&$videojuegos)
 }
 
 //FUNCION 2
+//CREACION DE LA FUNCION "ASIGNAR CODIGO" LA CUAL ASIGNA CODIGO SI ES NECESARIO
 function asignarCodigo(&$videojuegos)
 {
+    //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
     $contador = 1;
     $valorMaximo = null;
+    //RECORRE EL ARRAY 
     foreach ($videojuegos as &$titulos) {
+        //CRECION DE LA VARIABLE DONDE SE HARA UNA INSERCCION DE LA COLUMNA CODIGO CON SUS VALORES
         $codigo = $titulos['Codigo'];
         if ($valorMaximo == null || $codigo > $valorMaximo) {
             $valorMaximo = $codigo;
@@ -79,23 +85,37 @@ function asignarCodigo(&$videojuegos)
             $contador++;
         }
     }
+
+    //ORDENAMOS LOS VIDEOJUEGOS POR CODIGO EN ESTE CASO, NUMERICAMENTE DE MENOR A MAYOR
     sort($videojuegos);
-    crearJSON($videojuegos, "games.json"); 
+
+    //CREACION DEL NUEVO JSON QUE ALMACENARÁ EN "games.json" la variable &$videojuegos con la asignación de los codigos
+    crearJSON($videojuegos, "games.json");
+
+    //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
+    imprimirTabla($videojuegos);
+
 }
 
 //FUNCION 3
-// Convertir array a format JSON
+//CREACION DE LA FUNCION "FICHERO ELIMINAR" NECESITARA QUE SE LE PASE POR PARAMETRO EL ARRAY "VIDEOJUEGOS" U OTRO JUNTO A LAS FECHAS
 function ficheroEliminar($fecha1, $fecha2, &$videojuegos)
 {
+    //RECORRE EL ARRAY Y ELIMINA UN INTERVALO DE FECHAS DEL ARRAY
     foreach ($videojuegos as $titulos => $valor) {
         if ($valor['Llançament'] >= $fecha1 && $valor['Llançament'] <= $fecha2) {
             unset($videojuegos[$titulos]);
         }
     }
+    //CREACION DEL NUEVO JSON
     crearJSON($videojuegos, "JSON_Resultat_Eliminar.json");
+
+    //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
+    imprimirTabla($videojuegos);
 }
 
 //FUNCION 4
+//CREACION DE LA FUNCION "FICHERO EXPIRACION" LA CUAL AGREGA UNA NUEVA COLUMNA DE FECHAS DE EXPERACIÓN CON 5 AÑOS SOBRE LA FECHA DE LANZAMIENTO
 function ficheroExpiracion(&$videojuegos)
 {
     foreach ($videojuegos as &$titulos) {
@@ -104,16 +124,17 @@ function ficheroExpiracion(&$videojuegos)
         $fechaLanzamiento->modify('+5 years');
         $titulos['Expiracion'] = $fechaLanzamiento->format('Y-m-d');
     }
-    crearJSON($videojuegos,"JSON_Resultat_Data_Expiració.json");
+    crearJSON($videojuegos, "JSON_Resultat_Data_Expiració.json");
 }
 
 //FUNCION 5
+//CREACION DE LA FUNCION "COMPROBAR REPETIDOS" QUE COMPRUEBA LOS REPETIDOS Y MUESTRA POR PANTALLA SI HAY NO REGISTROS REPETIDOS
 function comprobarRepetidos(&$videojuegos)
 {
     $nombres = array();
     foreach ($videojuegos as &$titulos) {
         $nombre = $titulos['Nom'];
-        
+
         if (in_array($nombre, $nombres)) {
             echo "<h2>Hay registros repetidos</h2>";
             echo "<img src=https://media.tenor.com/WsmiS-hUZkEAAAAj/verify.gif>";
@@ -121,14 +142,17 @@ function comprobarRepetidos(&$videojuegos)
         } else {
             $nombres[] = $nombre;
         }
-    } 
+    }
     echo "<h2>No hay registros repetidos</h2>";
     echo "<img src=https://images.emojiterra.com/google/noto-emoji/unicode-15/animated/274c.gif width = 20%>";
-    return 0;   
+    return 0;
 }
 
 //FUNCION 6
-function ficheroRepetidos(&$videojuegos) {
+//CREACION DE LA FUNCION "FICHERO REPETIDOS" QUE COGE LOS VALORES REPETIDOS Y LOS IMPRIME POR PANTALLA
+function ficheroRepetidos(&$videojuegos)
+{
+    //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
     $nombres = array();
     $repetidos = array();
 
@@ -140,19 +164,23 @@ function ficheroRepetidos(&$videojuegos) {
         } else {
             $nombres[] = $nombre;
         }
-    } 
+    }
 
     echo "<h2>En caso de haya repetidos se imprimirá la tabla, de lo contrario no.</h2>";
 
-    crearJSON($repetidos,"JSON_Resultat_repetits.json");
-    
+    //CREACION DEL NUEVO JSON
+    crearJSON($repetidos, "JSON_Resultat_repetits.json");
+
     if ($repetidos != null) {
         imprimirTabla($repetidos);
     }
 }
 
 //FUNCION 7
-function ficheroEliminarRepetidos(&$videojuegos) {
+//CREACION DE LA FUNCION "FICHERO ELIMINAR REPETIDOS" QUE APARTA LOS VALORES REPETIDOS Y IMPRIME TODOS LOS DEMAS
+function ficheroEliminarRepetidos(&$videojuegos)
+{
+    //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
     $nombres = array();
     $repetidos = array();
     $noRepetidos = array();
@@ -166,19 +194,24 @@ function ficheroEliminarRepetidos(&$videojuegos) {
             $nombres[] = $nombre;
             $noRepetidos[] = $titulos;
         }
-    } 
-    crearJSON($noRepetidos,"JSON_Resultat_eliminar_repetits.json");
+    }
+    crearJSON($noRepetidos, "JSON_Resultat_eliminar_repetits.json");
 
     echo "<h2>En la siguiente tabla se ha eliminado cualquier registro repetido que pudiera contener.</h2>";
+    
+    //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
     imprimirTabla($noRepetidos);
 }
 
 //FUNCION 8
-function ModernoAntiguo(&$videojuegos) {
+//CREACION DE LA FUNCION "MODERNO ANTIGUO" QUE ALMACENA EL PRIMERO JUEGO DEL ARRAY Y LO VA COMPARANDO CON LOS DEMAS PARA VER CUAL ES EL MAS ANTIGUO O MODERNO
+function ModernoAntiguo(&$videojuegos)
+{
+    //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
     $juegoAntiguo = null;
     $juegoModerno = null;
 
-    foreach($videojuegos as $titulos) {
+    foreach ($videojuegos as $titulos) {
         $fechas = $titulos['Llançament'];
         $fechaLanzamiento = new DateTime($fechas);
 
@@ -191,9 +224,9 @@ function ModernoAntiguo(&$videojuegos) {
             $juegoModerno = $titulos;
             $juegoModerno['Llançament'] = $fechaLanzamiento;
         }
-
     }
 
+    //IMPRIMIMOS 2 TABLAS PARA MOSTRAR EL JUEGO MAS ANTIGUO Y MODERNO, ADJUNTANDO EL NOMBRE Y FECHAS DE LANZAMIENTO CORRESPONDIENTES
     echo "<table border='1'>";
     echo "<tr><th>Nombre del Juego Más Antiguo</th><th>Fecha de Lanzamiento</th></tr>";
     echo "<tr><td>{$juegoAntiguo['Nom']}</td><td>{$juegoAntiguo['Llançament']->format('Y-m-d')}</td></tr>";
@@ -205,39 +238,49 @@ function ModernoAntiguo(&$videojuegos) {
     echo "<tr><th>Nombre del Juego Más Moderno</th><th>Fecha de Lanzamiento</th></tr>";
     echo "<tr><td>{$juegoModerno['Nom']}</td><td>{$juegoModerno['Llançament']->format('Y-m-d')}</td></tr>";
     echo "</table>";
-
 }
 
 //FUNCION 9
-function ficheroOrdenado(&$videojuegos) {
+//CREACION DE LA FUNCION "FICHERO ORDENADO" LA CUAL CREA UN FICHERO DONDE SE ALMACENAN Y ORDENAN ALFABETICAMENTE LOS VIDEOJUEGOS
+function ficheroOrdenado(&$videojuegos)
+{
     $nombres = array_column($videojuegos, 'Nom');
     array_multisort($nombres, $videojuegos);
-    
+
     crearJSON($videojuegos, "JSON_Resultat_ordenat_alfabetic.json");
+    
+    //LLAMAMOS A LA FUNCION imprimirTabla PARA IMPRIMIR NUESTRA TABLA
+    imprimirTabla($videojuegos);
+
 }
 
 //FUNCION 10
-function contarVideojuegos(&$videojuegos) {
+//CREACION DE LA FUNCION "CONTAR VIDEOJUEGOS" QUE BASICAMENTE EXTRAE AÑO POR AÑO DE LA ARRAY Y A SU VEZ VA AUMENTANDO UN VALOR QUE SE LE ASIGNA AL AÑO
+function contarVideojuegos(&$videojuegos)
+{
+    //CREACION DE VARIABLES Y ASIGNACIÓN DE LOS VALORES
     $años = [];
-    foreach($videojuegos as $titulos) {
+
+    foreach ($videojuegos as $titulos) {
         $añoLanzamiento = date("Y", strtotime($titulos['Llançament']));
-        
-        if ($años[$añoLanzamiento] ) {
-            $años[$añoLanzamiento]++ ;
+
+        if ($años[$añoLanzamiento]) {
+            $años[$añoLanzamiento]++;
         } else {
             $años[$añoLanzamiento] = 1;
         }
     }
     ksort($años);
-    
+
+    //CREAMOS UNA TABLA PARA MOSTRAR CADA AÑO Y EL NUMERO DE JUEGOS QUE TIENE, HACIENDO USO DE LA VARIABLE $años
     echo "<table border='1'>";
     echo "<tr><th>Año</th><th>Cantidad de Videojuegos</th></tr>";
-    
-    foreach($años as $año => $cantidad) {
+
+    foreach ($años as $año => $cantidad) {
         echo "<tr>";
         echo "<td>$año</td><td>$cantidad</td>";
         echo "</tr>";
     }
-    
+
     echo "</table>";
 }
