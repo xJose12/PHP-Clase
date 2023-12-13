@@ -193,11 +193,19 @@ function ModernoAntiguo(&$videojuegos) {
         }
 
     }
-    echo "Juego antiguo:";
-    print_r($juegoAntiguo);
-    echo "<br>", "<br>";
-    echo "Juego Moderno";
-    print_r($juegoModerno);
+
+    echo "<table border='1'>";
+    echo "<tr><th>Nombre del Juego Más Antiguo</th><th>Fecha de Lanzamiento</th></tr>";
+    echo "<tr><td>{$juegoAntiguo['Nom']}</td><td>{$juegoAntiguo['Llançament']->format('Y-m-d')}</td></tr>";
+    echo "</table>";
+
+    echo "<br>";
+
+    echo "<table border='1'>";
+    echo "<tr><th>Nombre del Juego Más Moderno</th><th>Fecha de Lanzamiento</th></tr>";
+    echo "<tr><td>{$juegoModerno['Nom']}</td><td>{$juegoModerno['Llançament']->format('Y-m-d')}</td></tr>";
+    echo "</table>";
+
 }
 
 //FUNCION 9
