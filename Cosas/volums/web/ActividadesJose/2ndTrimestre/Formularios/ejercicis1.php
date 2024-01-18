@@ -114,7 +114,7 @@
     <form method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <fieldset>
             <legend>
-                <h2>Ejercici6</h2>
+                <h2>Ejercici 5</h2>
             </legend>
             <h3>Nombres y Apellidos</h3>
             Nom: <input type="text" name="nom"><br>
@@ -142,47 +142,51 @@
                 <option value="IES BERENGUER">IES BERENGUER</option>
             </select><br><br>
             <input type="submit"><br>
+
+
+            <?php
+
+            // define variables and set to empty values
+            $nom = $llinatge1 = $llinatge2 = $ciudad = $aficiones = $centre = "";
+
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $nom = test_input($_GET["nom"]);
+                $llinatge1 = test_input($_GET["llinatge1"]);
+                $llinatge2 = test_input($_GET["llinatge2"]);
+                $ciudad = test_input($_GET["ciudad"]);
+                if (test_input($_GET["aficion"] != null)) {
+                    $aficiones = test_input(implode(', ', $_GET["aficion"]));
+                }
+                $centre = test_input($_GET["centre"]);
+            }
+
+            function test_input($data)
+            {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+
+            ?>
+
+            <?php
+            echo "<h2>Your Input:</h2>";
+            echo "Tu nombre es: $nom";
+            echo "<br>";
+            echo "Tu primer apellido es: $llinatge1";
+            echo "<br>";
+            echo "Tu segundo apellido es: $llinatge2";
+            echo "<br>";
+            echo "Tu ciudad es: $ciudad";
+            echo "<br>";
+            echo "Tus aficiones son: $aficiones";
+            echo "<br>";
+            echo "Tu centro escolar es: $centre";
+            ?>
+
         </fieldset>
     </form>
-
-    <?php
-
-    // define variables and set to empty values
-    $nom = $llinatge1 = $llinatge2 = $ciudad = $aficiones = $centre = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        $nom = test_input($_GET["nom"]);
-        $llinatge1 = test_input($_GET["llinatge1"]);
-        $llinatge2 = test_input($_GET["llinatge2"]);
-        $ciudad = test_input($_GET["ciudad"]);
-        $aficiones = test_input(implode(', ', $_GET["aficion"]));        
-        $centre = test_input($_GET["centre"]);
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
-
-    <?php
-    echo "<h2>Your Input:</h2>";
-    echo "Tu nombre es: $nom";
-    echo "<br>";
-    echo "Tu primer apellido es: $llinatge1";
-    echo "<br>";
-    echo "Tu segundo apellido es: $llinatge2";
-    echo "<br>";
-    echo "Tu ciudad es: $ciudad";
-    echo "<br>";
-    echo "Tus aficiones son: $aficiones";
-    echo "<br>";
-    echo "Tu centro escolar es: $centre";
-    ?>
 
 </body>
 
