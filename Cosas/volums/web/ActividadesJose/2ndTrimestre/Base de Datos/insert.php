@@ -2,9 +2,8 @@
 <?php
 include "connect_db.php";
 try {
-    $sql = "INSERT INTO Datos (nombre, apellidos, email)
-    VALUES ('Ana Maria', 'Aguilera Contreras', 'anamariaac@gmail.com')";
-    // use exec() because no results are returned
+    $sql = "INSERT INTO DatosPersonas (nom, llinatge1, llinatge2, email)
+    VALUES ('Ana Maria', 'Aguilera', 'Contreras', 'anamariaac@gmail.com')";
     $conn->exec($sql);
     echo "New record created successfully";
     $last_id = $conn->lastInsertId();

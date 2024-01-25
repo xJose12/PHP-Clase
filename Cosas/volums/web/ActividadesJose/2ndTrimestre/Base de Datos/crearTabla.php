@@ -8,9 +8,7 @@ try {
     nom VARCHAR(30) NOT NULL,
     llinatge1 VARCHAR(30) NOT NULL,
     llinatge2 VARCHAR(30) NOT NULL,
-    ciudad VARCHAR(30) NOT NULL,
-    aficiones VARCHAR(30) NOT NULL,
-    centre VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
 
