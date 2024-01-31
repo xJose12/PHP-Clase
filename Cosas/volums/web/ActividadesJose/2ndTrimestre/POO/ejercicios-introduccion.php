@@ -135,73 +135,327 @@
 
     <?php
 
-    class Producto
+    class Producte
     {
-        public $nombre;
-        public $precio;
+        public $nom;
+        public $preu;
         public $stock;
 
-        function __construct($nombre, $precio, $stock)
+        public function __construct($nom, $preu, $stock)
         {
-            $this->nombre = $nombre;
-            $this->precio = $precio;
+            $this->nom = $nom;
+            $this->preu = $preu;
             $this->stock = $stock;
         }
-
-        public function cambiarPrecio($precio) {
-            $this->precio = $precio;
-        }
-
-        public function aumentarStock($precio) {
-            $this->precio = $precio;
-        }
-
     }
 
-    class Tienda {
-        public $productos = [];
+    class TendaVirtual
+    {
+        public $productes = [];
 
-        public function agregarProducto($nombre, $precio, $stock){
-            $producto = new Producto($nombre, $precio, $stock);
-            $this->productos[] = $producto;
+        // Mètode per afegir un producte a la tenda
+        public function afegirProducte($producte)
+        {
+            $this->productes[] = $producte;
+            echo "Producte afegit a la tenda: {$producte->nom}<br>";
         }
 
-        public function cambiarPrecio($nombre, $precio) {
-            foreach ($this->productos as $producto) {
-                if ($producto->nombre == $nombre) {
-                    $producto->cambiarPrecio($precio);
+        // Mètode per comprar un producte de la tenda
+        public function comprarProducte($nom, $quantitat)
+        {
+            foreach ($this->productes as $producte) {
+                if ($producte->nom == $nom) {
+                    if ($producte->stock >= $quantitat) {
+                        $producte->stock -= $quantitat;
+                        $total = $producte->preu * $quantitat;
+                        echo "Compra realitzada: {$quantitat} unitats de {$producte->nom} ({$producte->preu}€) = {$total}€ <br>";
+                    } else {
+                        echo "No hi ha prou estoc de {$producte->nom}<br>";
+                    }
                     return;
                 }
             }
-            echo "<i>No se ha encontrado ningun producto con el nombre: <b>{$nombre}</b></i><br>";
-
-            $this->productos[0]->cambiarPrecio($precio);
+            echo "Producte no trobat a la tenda<br>";
         }
 
-        public function aumentarStock($nombre, $precio) {
-            foreach ($this->productos as $producto) {
-                if ($producto->nombre == $nombre) {
-                    $producto->cambiarPrecio($precio);
+        // Mètode per canviar el preu d'un producte de la tenda
+        public function canviarPreuProducte($nom, $nouPreu)
+        {
+            foreach ($this->productes as $producte) {
+                if ($producte->nom == $nom) {
+                    $producte->preu = $nouPreu;
+                    echo "Preu del producte {$producte->nom} actualitzat a {$nouPreu}€<br>";
                     return;
                 }
             }
-            echo "<i>No se ha encontrado ningun producto con el nombre: <b>{$nombre}</b></i><br>";
-
-            $this->productos[0]->cambiarPrecio($precio);
+            echo "Producte no trobat a la tenda<br>";
         }
 
+        // Mètode per augmentar el stock d'un producte de la tenda
+        public function augmentarStockProducte($nom, $quantitat)
+        {
+            foreach ($this->productes as $producte) {
+                if ($producte->nom == $nom) {
+                    $producte->stock += $quantitat;
+                    echo "Estoc del producte {$producte->nom} augmentat en {$quantitat}<br>";
+                    return;
+                }
+            }
+            echo "Producte no trobat a la tenda<br>";
+        }
+
+        // Mètode per imprimir el stock actual de la tenda
+        public function imprimirStock()
+        {
+            echo "--------------------<br>";
+            if (!empty($this->productes)) {
+                foreach ($this->productes as $producte) {
+                    echo "<b>{$producte->nom}</b>: {$producte->preu}€ (x{$producte->stock}) <br>";
+                }
+            } else {
+                echo "No hi ha productes a la tenda<br>";
+            }
+            echo "--------------------<br>";
+        }
     }
 
-    $tusProductos = new Tienda();
-    $tusProductos->agregarProducto("Xbox", 33, 324);
-    $tusProductos->agregarProducto("Playstation", 234, 2);
+    // Creem alguns productes
+    $producte1 = new Producte("Ordinador portàtil", 800, 10);
+    $producte2 = new Producte("Telèfon intel·ligent", 500, 15);
 
+    // Creem la tenda virtual
+    $tenda = new TendaVirtual();
+    $tenda->imprimirStock();
 
-    $tusProductos->cambiarPrecio("PC", 100);
+    // Afegim productes a la tenda
+    $tenda->afegirProducte($producte1);
+    $tenda->afegirProducte($producte2);
+    $tenda->imprimirStock();
 
+    // Realitzem operacions de prova
+    $tenda->comprarProducte("Ordinador portàtil", 3);
+    $tenda->imprimirStock();
+    $tenda->canviarPreuProducte("Telèfon intel·ligent", 550);
+    $tenda->imprimirStock();
+    $tenda->augmentarStockProducte("Ordinador portàtil", 5);
+    $tenda->imprimirStock();
 
     ?>
 
+    <h2>4. Una escuela, sistema de gestion de alumnos y matriculaciones</h2>
+
+    <?php
+
+    class Asignatura
+    {
+        private $nom;
+        private $hores;
+
+        public function __construct($nom, $hores)
+        {
+            $this->nom = $nom;
+            $this->hores = $hores;
+        }
+
+        public function getNom()
+        {
+            return $this->nom;
+        }
+
+        public function setNom($nom)
+        {
+            $this->nom = $nom;
+        }
+
+        public function getHores()
+        {
+            return $this->hores;
+        }
+
+        public function setHores($hores)
+        {
+            $this->hores = $hores;
+        }
+    }
+
+    class Alumne
+    {
+        private $id;
+        private $nom;
+        private $edad;
+        private $curs;
+        private $asignatures;
+
+        public function __construct($id, $nom, $edad, $curs, $asignatures)
+        {
+            $this->id = $id;
+            $this->nom = $nom;
+            $this->edad = $edad;
+            $this->curs = $curs;
+            $this->asignatures = [];
+        }
+
+        public function getId()
+        {
+            return $this->id;
+        }
+
+        public function setId($id)
+        {
+            $this->id = $id;
+        }
+
+        public function getNom()
+        {
+            return $this->nom;
+        }
+
+        public function setNom($nom)
+        {
+            $this->nom = $nom;
+        }
+
+        public function getEdad()
+        {
+            return $this->edad;
+        }
+
+        public function setEdad($edad)
+        {
+            $this->edad = $edad;
+        }
+
+        public function getCurs()
+        {
+            return $this->curs;
+        }
+
+        public function setCurs($curs)
+        {
+            $this->curs = $curs;
+        }
+
+        public function getAsignatures()
+        {
+            return $this->asignatures;
+        }
+
+        public function setAsignatures($asignatures)
+        {
+            $this->asignatures = $asignatures;
+        }
+    }
+
+    class Escola
+    {
+        private $nom;
+        private $direccio;
+        private $anyInaguracio;
+        private $cursEscolar;
+        private $llistaAlumnes;
+        private $llistaAsignatures;
+
+        public function __construct($nom, $direccio, $anyInaguracio, $cursEscolar)
+        {
+            $this->nom = $nom;
+            $this->direccio = $direccio;
+            $this->anyInaguracio = $anyInaguracio;
+            $this->cursEscolar = $cursEscolar;
+            $this->llistaAlumnes = [];
+            $this->llistaAsignatures = [];
+        }
+
+        public function afegirAlumne(Alumne $alumne)
+        {
+            $this->llistaAlumnes[] = $alumne;
+            echo "Alumne afegit a la escola: {$alumne->getNom()}<br>";
+        }
+
+        public function afegirAsignatura(Asignatura $asignatura)
+        {
+            $this->llistaAsignatures[] = $asignatura;
+            echo "Asignatura afegit a la escola: {$asignatura->getNom()}<br>";
+        }
+
+        // Matricular alumne a una assignatura concreta
+        public function matricularAlumne(Alumne $alumne, Asignatura $asignatures)
+        {
+            if ($alumne->getCurs() == $asignatures->getNom()) {
+                $alumne->setAsignatures($asignatures);
+                echo "Alumne matriculat a la asignatura: {$asignatures->getNom()}<br>";
+            } else {
+                echo "Alumne no pot matricular a la asignatura: {$asignatures->getNom()}<br>";
+            }
+        }
+
+        // Mostrar les dades d’un alumne donat el seu id
+        public function mostrarAlumne($id)
+        {
+            echo "--------------------<br>";
+            foreach ($this->llistaAlumnes as $alumne) {
+                if ($alumne->getId() == $id) {
+                    echo "<b>{$alumne->getNom()}</b>: {$alumne->getEdad()} anys, {$alumne->getCurs()}<br>";
+                    return;
+                }
+            }
+            echo "Alumne no trobat<br>";
+        }
+
+        // Mostrar les dades d’una assignatura donat el seu nom
+        public function mostrarAsignatura($nom)
+        {
+            foreach ($this->llistaAsignatures as $asignatura) {
+                if ($asignatura->getNom() == $nom) {
+                    echo "<b>{$asignatura->getNom()}</b>: {$asignatura->getHores()}h lectivas<br>";
+                    return;
+                }
+            }
+            echo "Asignatura no trobat<br>";
+        }
+
+        // Mostrar les dades completes de l’escola, amb un llistat d’alumnes per cada assignatura i un llistat final d’alumnes sense cap assignatura matriculada
+        public function mostrarEscola()
+        {
+            echo "--------------------<br>";
+            foreach ($this->llistaAsignatures as $asignatura) {
+                echo "<b>{$asignatura->getNom()}</b>: {$asignatura->getHores()}<br>";
+            }
+            foreach ($this->llistaAlumnes as $alumne) {
+                if ($alumne->getAsignatures()->getNom() == $asignatura->getNom()) {
+                    echo "{$alumne->getNom()}<br>";
+                }
+            }
+        }
+    }
+
+    // Comprobaciones de nuestra escuela
+    // Afegir alumne a l’escola
+    $alumne1 = new Alumne(
+        1,
+        "Jose",
+        18,
+        "Informatica",
+        [new Asignatura("Informatica", 10), new Asignatura("Matemàtica", 10)]
+    );
+    $alumne2 = new Alumne(
+        2,
+        "Ana",
+        22,
+        "Informatica",
+        [new Asignatura("Informatica", 10), new Asignatura("Fisica", 33)]
+    );
+
+    $escola = new Escola("IES MANACOR", "Avinguda 1", 2018, 2024);
+    $escola->afegirAlumne($alumne1);
+    $escola->afegirAlumne($alumne2);
+    $escola->afegirAsignatura(new Asignatura("Informatica", 10));
+    $escola->afegirAsignatura(new Asignatura("Fisica", 10));
+    $escola->mostrarAlumne(1);
+    $escola->mostrarAsignatura("Informatica");
+    $escola->mostrarAsignatura("Matemàtica");
+    $escola->mostrarEscola();
+
+    ?>
 </body>
 
 </html>
