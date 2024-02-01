@@ -9,7 +9,7 @@ class Client
             $conn = new PDO("mysql:host=$servername;dbname=DatosFormulario", $username, $password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully";
+            echo "Connected successfully <br>";
         } catch (PDOException $e) {
             echo "Connection failed2: " . $e->getMessage();
         }
@@ -31,14 +31,31 @@ class Client
     }
 
 
-    public function consultaTots($servername, $username, $password)
+    public function consultaTots($servername, $username, $password, $nombreConsulta)
     {
         $conn = $this->connectar_bd($servername, $username, $password);
 
         try {
             $stmt = $conn->prepare("SELECT * FROM DatosPersonas");
             $result = $stmt->execute();
-            $conn = null;
+            $conn = null;            
+            
+            $resultado = $nombreConsulta->consultaTots($servername, $username, $password, $nombreConsulta);
+            $arrayValues = $resultado->fetchAll(PDO::FETCH_ASSOC);
+            echo "<table border=1px wdith=\"100%\">\n";
+            echo "<tr>\n";
+            foreach ($arrayValues[0] as $key => $useless) {
+                echo "<th>$key</th>";
+            }
+            echo "</tr>";
+            foreach ($arrayValues as $row) {
+                echo "<tr>";
+                foreach ($row as $key => $val) {
+                    echo "<td>$val</td>";
+                }
+                echo "</tr>\n";
+            }
+            echo "</table>\n";
             return ($stmt);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();

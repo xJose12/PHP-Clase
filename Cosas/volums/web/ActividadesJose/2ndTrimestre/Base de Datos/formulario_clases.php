@@ -27,28 +27,10 @@ include "clase_cliente.php";
             $llinatge1 = test_input($_GET["llinatge1"]);
             $llinatge2 = test_input($_GET["llinatge2"]);
             $email = test_input($_GET["email"]);
-            
-            // $ciudad = test_input($_GET["ciudad"]);
-            // if (test_input($_GET["aficion"] != null)) {
-            //     $aficiones = test_input(implode(', ', $_GET["aficion"]));
-            // }
-            // $centre = test_input($_GET["centre"]);
-
-            // try {
-            //     $sql = "INSERT INTO DatosPersonas (nom, llinatge1, llinatge2, email)
-            //     VALUES ('$nom', '$llinatge1', '$llinatge2', '$email')";
-            //     $conn->exec($sql);
-            //     echo "Se ha añadido un nuevo registro <br>";
-            //     $last_id = $conn->lastInsertId();
-            //     echo "Registro con exito!. El Ultimo id es: " . $last_id;
-            // } catch (PDOException $e) {
-            //     echo $sql . "<br>" . $e->getMessage();
-            // }
-
-            // $conn = null;
 
             $client = new Client();
-            $client -> inserir($servername, $username, $password, $nom, $llinatge1, $llinatge2, $email);
+            $client->inserir($servername, $username, $password, $nom, $llinatge1, $llinatge2, $email);
+            $client->consultaTots($servername, $username, $password, $client);
         }
 
         function test_input($data)
