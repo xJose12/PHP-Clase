@@ -31,7 +31,7 @@ class Client
     }
 
 
-    public function consultaTots($servername, $username, $password, $nombreConsulta)
+    public function consultaTots($servername, $username, $password)
     {
         $conn = $this->connectar_bd($servername, $username, $password);
 
@@ -39,23 +39,6 @@ class Client
             $stmt = $conn->prepare("SELECT * FROM DatosPersonas");
             $result = $stmt->execute();
             $conn = null;            
-            
-            $resultado = $nombreConsulta->consultaTots($servername, $username, $password, $nombreConsulta);
-            $arrayValues = $resultado->fetchAll(PDO::FETCH_ASSOC);
-            echo "<table border=1px wdith=\"100%\">\n";
-            echo "<tr>\n";
-            foreach ($arrayValues[0] as $key => $useless) {
-                echo "<th>$key</th>";
-            }
-            echo "</tr>";
-            foreach ($arrayValues as $row) {
-                echo "<tr>";
-                foreach ($row as $key => $val) {
-                    echo "<td>$val</td>";
-                }
-                echo "</tr>\n";
-            }
-            echo "</table>\n";
             return ($stmt);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
