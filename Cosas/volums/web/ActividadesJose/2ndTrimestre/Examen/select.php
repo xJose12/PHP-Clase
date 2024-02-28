@@ -40,6 +40,7 @@ class BBDD
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
+
         $arrayValues = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo "<table border=1px wdith=\"100%\">\n";
         echo "<tr>\n";

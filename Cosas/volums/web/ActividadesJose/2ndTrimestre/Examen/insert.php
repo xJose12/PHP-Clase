@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && test_input($_GET["DesenvolupadorNombr
 
     echo "<h2>Insercciones</h2>";
     echo "Desenvolupador Nombre: $desenvolupador <br>";
+    
     $bbdd = new BBDD("db", "root", "politecnic", "Juegos");
     $bbdd->inserir($desenvolupador);
 }
