@@ -1,0 +1,32 @@
+[
+  {
+    "Titulo": "Avatar 1",
+    "Fecha_lanzamiento": "2024-02-01",
+    "Presupuesto": "1214324231",
+    "Pais": "ENGLAND"
+  },
+  {
+    "Titulo": "Avatar 2",
+    "Fecha_lanzamiento": "2024-02-01",
+    "Presupuesto": "32142341",
+    "Pais": "SPAIN"
+  },
+  {
+    "Titulo": "Avatar 3",
+    "Fecha_lanzamiento": "2024-02-01",
+    "Presupuesto": "34231",
+    "Pais": "US"
+  },
+  {
+    "Titulo": "Avatar 4",
+    "Fecha_lanzamiento": "2024-02-01",
+    "Presupuesto": "34231",
+    "Pais": "US"
+  },
+  {
+    "Titulo": "Avatar 5",
+    "Fecha_lanzamiento": "2024-02-01",
+    "Presupuesto": "34231",
+    "Pais": "US"
+  }
+]
